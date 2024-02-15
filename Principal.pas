@@ -48,7 +48,7 @@ end;
 
 procedure TForm1.Entrada1Click(Sender: TObject);
 begin
- TfmCadMov.showModal;
+ TfmEntrada.showModal;
 end;
 
 procedure TForm1.Sair1Click(Sender: TObject);

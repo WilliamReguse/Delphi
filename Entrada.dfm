@@ -129,7 +129,7 @@
     Width = 121
     Height = 33
     DataField = 'COR'
-    DataSource = DataModule2.DSEst
+    DataSource = DataModule2.DSProduto
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -143,8 +143,8 @@
     Top = 283
     Width = 121
     Height = 33
-    DataField = 'TAM'
-    DataSource = DataModule2.DSEst
+    DataField = 'TAMANHO'
+    DataSource = DataModule2.DSProduto
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19

@@ -58,6 +58,7 @@ object DataModule2: TDataModule2
     Top = 120
   end
   object FDEst: TFDTable
+    Active = True
     IndexFieldNames = 'ID'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -91,6 +92,31 @@ object DataModule2: TDataModule2
       Required = True
       Size = 150
     end
+    object FDEstID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      Required = True
+    end
+    object FDEstNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Required = True
+    end
+    object FDEstFABRICANTE: TStringField
+      FieldName = 'FABRICANTE'
+      Origin = 'FABRICANTE'
+      Required = True
+    end
+    object FDEstVALIDADE: TDateField
+      FieldName = 'VALIDADE'
+      Origin = 'VALIDADE'
+      Required = True
+    end
+    object FDEstESTOQUEATUAL: TIntegerField
+      FieldName = 'ESTOQUEATUAL'
+      Origin = 'ESTOQUEATUAL'
+      Required = True
+    end
   end
   object DSEst: TDataSource
     DataSet = FDEst
@@ -98,6 +124,7 @@ object DataModule2: TDataModule2
     Top = 128
   end
   object CONSULTA_ESTOQUE: TFDQuery
+    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT EST.CODIGO,PROD.DESCRICAO,EST.COR,EST.TAM,EST.QUANTIDADE '
@@ -230,5 +257,11 @@ object DataModule2: TDataModule2
       Origin = 'observacoes'
       BlobType = ftMemo
     end
+  end
+  object INSERT_ESTOQUE: TADOQuery
+    DataSource = DSEst
+    Parameters = <>
+    Left = 464
+    Top = 400
   end
 end

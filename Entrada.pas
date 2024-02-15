@@ -75,6 +75,7 @@ end;
 
 procedure TTfmEntrada.GRAVARClick(Sender: TObject);
 begin
+
          DataModule2.FDEst.Post;
 
 end;

@@ -46,6 +46,16 @@ object Estoque: TEstoque
         Expanded = False
         FieldName = 'QUANTIDADE'
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'OBS'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ID'
+        Visible = True
       end>
   end
   object Panel1: TPanel
