@@ -3,27 +3,26 @@ object DataModule2: TDataModule2
   Width = 640
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=sistema'
+      'Database=estoque'
       'User_Name=root'
       'DriverID=MySQL')
     Connected = True
     LoginPrompt = False
-    Left = 136
-    Top = 40
+    Left = 24
+    Top = 16
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
     VendorLib = 'C:\Users\Sandro\Desktop\Sistema\libmysql.dll'
-    Left = 248
-    Top = 384
+    Left = 512
+    Top = 40
   end
   object FDProduto: TFDTable
-    Active = True
     IndexFieldNames = 'ID'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     TableName = 'sistema.produto'
-    Left = 248
-    Top = 48
+    Left = 368
+    Top = 408
     object FDProdutoID: TIntegerField
       FieldName = 'ID'
       Origin = 'ID'
@@ -54,17 +53,16 @@ object DataModule2: TDataModule2
   end
   object DSProduto: TDataSource
     DataSet = FDProduto
-    Left = 248
-    Top = 120
+    Left = 464
+    Top = 416
   end
   object FDEst: TFDTable
-    Active = True
     IndexFieldNames = 'ID'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     TableName = 'estoque_produto'
-    Left = 360
-    Top = 48
+    Left = 568
+    Top = 328
     object FDEstCODIGO: TIntegerField
       FieldName = 'CODIGO'
       Origin = 'CODIGO'
@@ -120,86 +118,40 @@ object DataModule2: TDataModule2
   end
   object DSEst: TDataSource
     DataSet = FDEst
-    Left = 360
-    Top = 128
-  end
-  object CONSULTA_ESTOQUE: TFDQuery
-    Active = True
-    Connection = FDConnection1
-    SQL.Strings = (
-      'SELECT EST.CODIGO,PROD.DESCRICAO,EST.COR,EST.TAM,EST.QUANTIDADE '
-      'FROM ESTOQUE_PRODUTO  EST'
-      'INNER JOIN PRODUTO PROD ON EST.CODIGO = PROD.CODIGO')
-    Left = 120
-    Top = 128
-  end
-  object sqlAumentaEstoque: TFDCommand
-    CommandText.Strings = (
-      
-        'UPDATE estoque_produto SET estoqueAtual = estoqueAtual + :pQtd w' +
-        'here id = :pId')
-    ParamData = <
-      item
-        Name = 'pQtd'
-        ParamType = ptInput
-      end
-      item
-        Name = 'pId'
-        ParamType = ptInput
-      end>
-    Left = 496
-    Top = 40
-  end
-  object sqlDiminuiEstoque: TFDCommand
-    Connection = FDConnection1
-    CommandText.Strings = (
-      
-        'UPDATE estoque_produto SET estoqueAtual = estoqueAtual - :pQtd w' +
-        'here id = :pId')
-    ParamData = <
-      item
-        Name = 'pQtd'
-        ParamType = ptInput
-      end
-      item
-        Name = 'pId'
-        ParamType = ptInput
-      end>
-    Left = 496
-    Top = 112
+    Left = 560
+    Top = 392
   end
   object sqlMovimentacoes: TFDQuery
     Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT * FROM movimentacoes')
-    Left = 384
-    Top = 248
+    Left = 40
+    Top = 176
   end
   object dsSqlMovimentacoes: TDataSource
     DataSet = sqlMovimentacoes
-    Left = 504
-    Top = 248
+    Left = 32
+    Top = 232
   end
   object sqlValidaEstoque: TFDQuery
     SQL.Strings = (
       'select * from estoque_produto')
-    Left = 384
-    Top = 320
+    Left = 144
+    Top = 184
   end
   object dsValidaEstoque: TDataSource
     DataSet = sqlValidaEstoque
-    Left = 496
-    Top = 320
+    Left = 144
+    Top = 232
   end
   object tbMovProdutos: TFDTable
-    IndexName = 'idMovimentacao'
-    MasterFields = 'id'
+    Active = True
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'estoque.movimentacoes_produto'
-    Left = 104
-    Top = 200
+    TableName = 'estoque.movimentacoes_produtos'
+    Left = 192
+    Top = 16
     object tbMovProdutosid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
@@ -207,7 +159,6 @@ object DataModule2: TDataModule2
     object tbMovProdutosidMovimentacao: TIntegerField
       FieldName = 'idMovimentacao'
       Origin = 'idMovimentacao'
-      Required = True
     end
     object tbMovProdutosidProduto: TIntegerField
       FieldName = 'idProduto'
@@ -219,24 +170,14 @@ object DataModule2: TDataModule2
       Origin = 'qtd'
       Required = True
     end
-    object tbMovProdutosnomeProduto: TStringField
-      FieldKind = fkLookup
-      FieldName = 'nomeProduto'
-      LookupKeyFields = 'id'
-      LookupResultField = 'nome'
-      KeyFields = 'idProduto'
-      Size = 50
-      Lookup = True
-    end
   end
   object tbMovimentacoes: TFDTable
     Active = True
-    IndexFieldNames = 'id'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     TableName = 'sistema.movimentacoes'
-    Left = 104
-    Top = 272
+    Left = 296
+    Top = 16
     object tbMovimentacoesid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
@@ -257,11 +198,96 @@ object DataModule2: TDataModule2
       Origin = 'observacoes'
       BlobType = ftMemo
     end
+    object tbMovimentacoeshr_mov: TDateTimeField
+      FieldName = 'hr_mov'
+      Origin = 'hr_mov'
+      Required = True
+    end
   end
-  object INSERT_ESTOQUE: TADOQuery
-    DataSource = DSEst
-    Parameters = <>
-    Left = 464
-    Top = 400
+  object tbProdutos: TFDTable
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = FDConnection1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'estoque.produtos'
+    Left = 112
+    Top = 16
+    object tbProdutosid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+    end
+    object tbProdutosnome: TStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 50
+    end
+    object tbProdutosfabricante: TStringField
+      FieldName = 'fabricante'
+      Origin = 'fabricante'
+      Required = True
+      Size = 30
+    end
+    object tbProdutosvalidade: TDateField
+      FieldName = 'validade'
+      Origin = 'validade'
+      Required = True
+      EditMask = '##/##/####;1;_'
+    end
+    object tbProdutosestoqueAtual: TIntegerField
+      FieldName = 'estoqueAtual'
+      Origin = 'estoqueAtual'
+    end
+  end
+  object dsProdutos: TDataSource
+    DataSet = tbProdutos
+    Left = 112
+    Top = 80
+  end
+  object sqlAumentaEstoque: TFDCommand
+    Connection = FDConnection1
+    CommandText.Strings = (
+      
+        'UPDATE produtos SET estoqueAtual = estoqueAtual + :pQtd where id' +
+        ' = :pId')
+    ParamData = <
+      item
+        Name = 'pId'
+        ParamType = ptInput
+      end
+      item
+        Name = 'pQtd'
+        ParamType = ptInput
+      end>
+    Left = 280
+    Top = 184
+  end
+  object sqlDiminuiEstoque: TFDCommand
+    Connection = FDConnection1
+    CommandText.Strings = (
+      
+        'UPDATE produtos SET estoqueAtual = estoqueAtual - :pQtd where id' +
+        ' = :pId')
+    ParamData = <
+      item
+        Name = 'pId'
+        ParamType = ptInput
+      end
+      item
+        Name = 'pQtd'
+        ParamType = ptInput
+      end>
+    Left = 400
+    Top = 192
+  end
+  object dsMovimentacoes: TDataSource
+    DataSet = tbMovimentacoes
+    Left = 296
+    Top = 88
+  end
+  object dsMovProdutos: TDataSource
+    DataSet = tbMovProdutos
+    Left = 192
+    Top = 96
   end
 end

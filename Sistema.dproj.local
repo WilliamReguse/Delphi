@@ -42,6 +42,5 @@
     <File Path="Produto.pas"/>
     <File Path="Produto.dfm"/>
     <File Path="CadMov.pas"/>
-    <File Path="CadMov.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

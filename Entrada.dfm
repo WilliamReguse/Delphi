@@ -3,7 +3,7 @@
   Top = 0
   Caption = 'TfmEntrada'
   ClientHeight = 511
-  ClientWidth = 921
+  ClientWidth = 1184
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,90 +12,67 @@
   Font.Style = []
   Position = poScreenCenter
   WindowState = wsMaximized
-  OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
-    Left = 16
-    Top = 182
-    Width = 30
-    Height = 25
-    Caption = 'Cor'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
+    Left = 32
+    Top = 72
+    Width = 55
+    Height = 15
+    Caption = 'TIPO MOV'
   end
   object Label2: TLabel
-    Left = 16
-    Top = 252
-    Width = 77
-    Height = 25
-    Caption = 'Tamanho'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-  end
-  object PRODUTO: TLabel
-    Left = 16
-    Top = 112
-    Width = 85
-    Height = 25
-    Caption = 'PRODUTO'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label4: TLabel
-    Left = 16
-    Top = 42
-    Width = 83
-    Height = 25
-    Caption = 'Tipo Mov.'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label5: TLabel
-    Left = 16
-    Top = 322
-    Width = 116
-    Height = 25
-    Caption = 'QUANTIDADE'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
+    Left = 32
+    Top = 141
+    Width = 66
+    Height = 15
+    Caption = 'DATA/HORA'
   end
   object Label3: TLabel
-    Left = 16
-    Top = 393
-    Width = 117
-    Height = 25
-    Caption = 'OBSERVA'#199#195'O'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
+    Left = 32
+    Top = 208
+    Width = 76
+    Height = 15
+    Caption = 'RESPONS'#193'VEL'
+  end
+  object Label4: TLabel
+    Left = 32
+    Top = 291
+    Width = 78
+    Height = 15
+    Caption = 'OBSERVA'#199#213'ES'
+  end
+  object Label7: TLabel
+    Left = 760
+    Top = 83
+    Width = 43
+    Height = 15
+    Caption = 'Produto'
+  end
+  object Label8: TLabel
+    Left = 934
+    Top = 83
+    Width = 62
+    Height = 15
+    Caption = 'Quantidade'
+  end
+  object Label9: TLabel
+    Left = 769
+    Top = 443
+    Width = 76
+    Height = 15
+    Caption = 'Total Produtos'
+  end
+  object Label10: TLabel
+    Left = 865
+    Top = 443
+    Width = 12
+    Height = 15
+    Caption = '00'
   end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 921
+    Width = 1184
     Height = 41
     Align = alTop
     Alignment = taRightJustify
@@ -103,12 +80,25 @@
     object MOVIMENTAÇÕES: TLabel
       Left = 16
       Top = 2
-      Width = 247
+      Width = 139
       Height = 28
-      Caption = 'MOVIMENTA'#199#195'O ENTRADA'
+      Caption = 'Movimenta'#231#245'es'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 776
+      Top = 8
+      Width = 122
+      Height = 25
+      Caption = 'Produtos Mov.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -123,105 +113,142 @@
       OnClick = Button1Click
     end
   end
-  object DBEdit2: TDBEdit
-    Left = 16
-    Top = 213
+  object DBEdit1: TDBEdit
+    Left = 24
+    Top = 162
     Width = 121
-    Height = 33
-    DataField = 'COR'
-    DataSource = DataModule2.DSProduto
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
+    Height = 23
+    DataField = 'hr_mov'
+    DataSource = DataModule2.dsMovimentacoes
     TabOrder = 1
   end
-  object DBEdit3: TDBEdit
-    Left = 16
-    Top = 283
+  object DBEdit2: TDBEdit
+    Left = 24
+    Top = 240
     Width = 121
-    Height = 33
-    DataField = 'TAMANHO'
-    DataSource = DataModule2.DSProduto
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
+    Height = 23
+    DataField = 'responsavel'
+    DataSource = DataModule2.dsMovimentacoes
     TabOrder = 2
   end
-  object ComboBox1: TComboBox
-    Left = 16
-    Top = 73
-    Width = 145
-    Height = 33
-    Style = csDropDownList
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
+  object DBMemo1: TDBMemo
+    Left = 24
+    Top = 320
+    Width = 185
+    Height = 89
+    DataField = 'observacoes'
+    DataSource = DataModule2.dsMovimentacoes
     TabOrder = 3
-    Items.Strings = (
-      'ENTRADA'
-      'SA'#205'DA')
   end
-  object DBEdit4: TDBEdit
-    Left = 16
-    Top = 355
-    Width = 121
-    Height = 33
-    DataField = 'QUANTIDADE'
-    DataSource = DataModule2.DSEst
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
+  object DBComboBox1: TDBComboBox
+    Left = 24
+    Top = 104
+    Width = 145
+    Height = 23
+    Style = csDropDownList
+    DataField = 'tipo'
+    DataSource = DataModule2.dsMovimentacoes
+    Items.Strings = (
+      'Entrada no Estoque'
+      'Sa'#237'da do Estoque')
     TabOrder = 4
   end
-  object GRAVAR: TButton
-    Left = 40
-    Top = 472
-    Width = 75
+  object DBNavigator1: TDBNavigator
+    Left = 232
+    Top = 47
+    Width = 232
     Height = 25
-    Caption = 'GRAVAR'
+    DataSource = DataModule2.dsMovimentacoes
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel]
     TabOrder = 5
-    OnClick = GRAVARClick
+    OnClick = DBNavigator1Click
   end
-  object Button2: TButton
-    Left = 174
-    Top = 472
-    Width = 89
-    Height = 25
-    Caption = 'LIMPAR DADOS'
+  object DBGrid1: TDBGrid
+    Left = 232
+    Top = 104
+    Width = 320
+    Height = 305
+    DataSource = DataModule2.dsMovimentacoes
     TabOrder = 6
-    OnClick = Button2Click
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'tipo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'responsavel'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'observacoes'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'hr_mov'
+        Visible = True
+      end>
   end
-  object DBMemo1: TDBMemo
-    Left = 16
-    Top = 424
-    Width = 185
-    Height = 42
-    DataField = 'OBS'
-    DataSource = DataModule2.DSEst
+  object DBNavigator2: TDBNavigator
+    Left = 744
+    Top = 47
+    Width = 224
+    Height = 25
+    DataSource = DataModule2.dsMovProdutos
+    VisibleButtons = [nbInsert, nbDelete, nbPost, nbCancel]
     TabOrder = 7
   end
   object DBLookupComboBox1: TDBLookupComboBox
-    Left = 16
-    Top = 143
+    Left = 760
+    Top = 104
     Width = 145
     Height = 23
-    DataField = 'CODIGO'
-    DataSource = DataModule2.DSEst
-    KeyField = 'ID'
-    ListField = 'CODIGO'
-    ListSource = DataModule2.DSProduto
+    DataField = 'idProduto'
+    DataSource = DataModule2.dsMovProdutos
+    KeyField = 'id'
+    ListField = 'nome'
+    ListSource = DataModule2.dsProdutos
     TabOrder = 8
+  end
+  object DBEdit4: TDBEdit
+    Left = 928
+    Top = 104
+    Width = 121
+    Height = 23
+    DataField = 'qtd'
+    DataSource = DataModule2.dsMovProdutos
+    TabOrder = 9
+  end
+  object DBGrid2: TDBGrid
+    Left = 744
+    Top = 133
+    Width = 320
+    Height = 260
+    DataSource = DataModule2.dsMovProdutos
+    TabOrder = 10
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'Produto'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'quantidade'
+        Visible = True
+      end>
   end
 end

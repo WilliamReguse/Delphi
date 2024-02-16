@@ -28,9 +28,6 @@ type
     DSEst: TDataSource;
     FDEstQUANTIDADE: TIntegerField;
     FDEstOBS: TStringField;
-    CONSULTA_ESTOQUE: TFDQuery;
-    sqlAumentaEstoque: TFDCommand;
-    sqlDiminuiEstoque: TFDCommand;
     sqlMovimentacoes: TFDQuery;
     dsSqlMovimentacoes: TDataSource;
     sqlValidaEstoque: TFDQuery;
@@ -40,7 +37,6 @@ type
     tbMovProdutosidMovimentacao: TIntegerField;
     tbMovProdutosidProduto: TIntegerField;
     tbMovProdutosqtd: TIntegerField;
-    tbMovProdutosnomeProduto: TStringField;
     tbMovimentacoes: TFDTable;
     tbMovimentacoesid: TFDAutoIncField;
     tbMovimentacoestipo: TStringField;
@@ -51,7 +47,18 @@ type
     FDEstFABRICANTE: TStringField;
     FDEstVALIDADE: TDateField;
     FDEstESTOQUEATUAL: TIntegerField;
-    INSERT_ESTOQUE: TADOQuery;
+    tbProdutos: TFDTable;
+    tbProdutosid: TFDAutoIncField;
+    tbProdutosnome: TStringField;
+    tbProdutosfabricante: TStringField;
+    tbProdutosvalidade: TDateField;
+    tbProdutosestoqueAtual: TIntegerField;
+    dsProdutos: TDataSource;
+    sqlAumentaEstoque: TFDCommand;
+    sqlDiminuiEstoque: TFDCommand;
+    dsMovimentacoes: TDataSource;
+    dsMovProdutos: TDataSource;
+    tbMovimentacoeshr_mov: TDateTimeField;
   private
     { Private declarations }
   public

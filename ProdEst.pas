@@ -13,7 +13,6 @@ type
     Button2: TButton;
     Panel1: TPanel;
     procedure Button2Click(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,11 +27,6 @@ implementation
 {$R *.dfm}
 
 uses DataModule;
-
-procedure TEstoque.Button1Click(Sender: TObject);
-begin
- DataModule2.consulta_estoque.active  := true;
-end;
 
 procedure TEstoque.Button2Click(Sender: TObject);
 begin

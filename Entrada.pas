@@ -11,25 +11,30 @@ type
   TTfmEntrada = class(TForm)
     Panel1: TPanel;
     MOVIMENTAÇÕES: TLabel;
+    Button1: TButton;
+    DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
+    DBMemo1: TDBMemo;
     Label1: TLabel;
     Label2: TLabel;
-    PRODUTO: TLabel;
-    ComboBox1: TComboBox;
-    Label4: TLabel;
-    Button1: TButton;
-    DBEdit4: TDBEdit;
-    Label5: TLabel;
-    GRAVAR: TButton;
-    Button2: TButton;
-    DBMemo1: TDBMemo;
     Label3: TLabel;
+    Label4: TLabel;
+    DBComboBox1: TDBComboBox;
+    DBNavigator1: TDBNavigator;
+    DBGrid1: TDBGrid;
+    Label6: TLabel;
+    DBNavigator2: TDBNavigator;
     DBLookupComboBox1: TDBLookupComboBox;
+    DBEdit4: TDBEdit;
+    Label7: TLabel;
+    Label8: TLabel;
+    DBGrid2: TDBGrid;
+    Label9: TLabel;
+    Label10: TLabel;
     procedure Button1Click(Sender: TObject);
-    procedure GRAVARClick(Sender: TObject);
+    procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
     procedure Button2Click(Sender: TObject);
-    procedure FormShow(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -48,36 +53,29 @@ implementation
 
 uses DataModule;
 
+
+
 procedure TTfmEntrada.Button1Click(Sender: TObject);
 begin
-  TfmEntrada.close;
+ TfmEntrada.Close;
 end;
-
-
-
 
 procedure TTfmEntrada.Button2Click(Sender: TObject);
 begin
- TfmEntrada.DBEdit2.text :='';
- TfmEntrada.DBEdit3.text :='';
- TfmEntrada.DBEdit4.text :='';
- TfmEntrada.DBMemo1.Text :='';
-End;
-
-
-procedure TTfmEntrada.FormShow(Sender: TObject);
-begin
- TfmEntrada.DBEdit2.Text :='';
- TfmEntrada.DBEdit3.Text :='';
- TfmEntrada.DBEdit4.Text :='';
- TfmEntrada.DBMemo1.Text :='';
+Datamodule2.tbMovimentacoes.Post;
 end;
 
-procedure TTfmEntrada.GRAVARClick(Sender: TObject);
+procedure TTfmEntrada.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
 begin
-
-         DataModule2.FDEst.Post;
-
+DataModule2.tbMovimentacoes.FieldByName('hr_mov').Value := now;
 end;
 
 end.
+
+
+
+
+
+
+
+

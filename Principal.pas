@@ -32,7 +32,7 @@ implementation
 
 {$R *.dfm}
 
-uses Produto, Entrada, ProdEst, CadMov;
+uses Produto, Entrada, ProdEst;
 
 procedure TForm1.Cadastro1Click(Sender: TObject);
 begin
