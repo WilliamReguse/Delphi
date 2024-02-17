@@ -16,113 +16,7 @@ object DataModule2: TDataModule2
     Left = 512
     Top = 40
   end
-  object FDProduto: TFDTable
-    IndexFieldNames = 'ID'
-    Connection = FDConnection1
-    ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'sistema.produto'
-    Left = 368
-    Top = 408
-    object FDProdutoID: TIntegerField
-      FieldName = 'ID'
-      Origin = 'ID'
-      Required = True
-    end
-    object FDProdutoCODIGO: TIntegerField
-      FieldName = 'CODIGO'
-      Origin = 'CODIGO'
-      Required = True
-    end
-    object FDProdutoDESCRICAO: TStringField
-      FieldName = 'DESCRICAO'
-      Origin = 'DESCRICAO'
-      Required = True
-      Size = 50
-    end
-    object FDProdutoCOR: TIntegerField
-      FieldName = 'COR'
-      Origin = 'COR'
-      Required = True
-    end
-    object FDProdutoTAMANHO: TStringField
-      FieldName = 'TAMANHO'
-      Origin = 'TAMANHO'
-      Required = True
-      Size = 5
-    end
-  end
-  object DSProduto: TDataSource
-    DataSet = FDProduto
-    Left = 464
-    Top = 416
-  end
-  object FDEst: TFDTable
-    IndexFieldNames = 'ID'
-    Connection = FDConnection1
-    ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'estoque_produto'
-    Left = 568
-    Top = 328
-    object FDEstCODIGO: TIntegerField
-      FieldName = 'CODIGO'
-      Origin = 'CODIGO'
-      Required = True
-    end
-    object FDEstCOR: TIntegerField
-      FieldName = 'COR'
-      Origin = 'COR'
-      Required = True
-    end
-    object FDEstTAM: TStringField
-      FieldName = 'TAM'
-      Origin = 'TAM'
-      Required = True
-      Size = 5
-    end
-    object FDEstQUANTIDADE: TIntegerField
-      FieldName = 'QUANTIDADE'
-      Origin = 'QUANTIDADE'
-      Required = True
-    end
-    object FDEstOBS: TStringField
-      FieldName = 'OBS'
-      Origin = 'OBS'
-      Required = True
-      Size = 150
-    end
-    object FDEstID: TIntegerField
-      FieldName = 'ID'
-      Origin = 'ID'
-      Required = True
-    end
-    object FDEstNOME: TStringField
-      FieldName = 'NOME'
-      Origin = 'NOME'
-      Required = True
-    end
-    object FDEstFABRICANTE: TStringField
-      FieldName = 'FABRICANTE'
-      Origin = 'FABRICANTE'
-      Required = True
-    end
-    object FDEstVALIDADE: TDateField
-      FieldName = 'VALIDADE'
-      Origin = 'VALIDADE'
-      Required = True
-    end
-    object FDEstESTOQUEATUAL: TIntegerField
-      FieldName = 'ESTOQUEATUAL'
-      Origin = 'ESTOQUEATUAL'
-      Required = True
-    end
-  end
-  object DSEst: TDataSource
-    DataSet = FDEst
-    Left = 560
-    Top = 392
-  end
   object sqlMovimentacoes: TFDQuery
-    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT * FROM movimentacoes')
@@ -147,6 +41,9 @@ object DataModule2: TDataModule2
   end
   object tbMovProdutos: TFDTable
     Active = True
+    IndexName = 'idMovimentacao'
+    MasterSource = dsMovimentacoes
+    MasterFields = 'id'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     TableName = 'estoque.movimentacoes_produtos'
@@ -173,9 +70,10 @@ object DataModule2: TDataModule2
   end
   object tbMovimentacoes: TFDTable
     Active = True
+    IndexFieldNames = 'id'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'sistema.movimentacoes'
+    TableName = 'estoque.movimentacoes'
     Left = 296
     Top = 16
     object tbMovimentacoesid: TFDAutoIncField
@@ -198,9 +96,8 @@ object DataModule2: TDataModule2
       Origin = 'observacoes'
       BlobType = ftMemo
     end
-    object tbMovimentacoeshr_mov: TDateTimeField
-      FieldName = 'hr_mov'
-      Origin = 'hr_mov'
+    object tbMovimentacoesdataHora: TDateTimeField
+      FieldName = 'dataHora'
       Required = True
     end
   end

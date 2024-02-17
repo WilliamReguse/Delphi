@@ -118,7 +118,7 @@
     Top = 162
     Width = 121
     Height = 23
-    DataField = 'hr_mov'
+    DataField = 'dataHora'
     DataSource = DataModule2.dsMovimentacoes
     TabOrder = 1
   end
@@ -156,10 +156,10 @@
   object DBNavigator1: TDBNavigator
     Left = 232
     Top = 47
-    Width = 232
+    Width = 224
     Height = 25
     DataSource = DataModule2.dsMovimentacoes
-    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel]
+    VisibleButtons = [nbInsert, nbDelete, nbPost, nbCancel]
     TabOrder = 5
     OnClick = DBNavigator1Click
   end
@@ -188,12 +188,7 @@
       end
       item
         Expanded = False
-        FieldName = 'observacoes'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'hr_mov'
+        FieldName = 'dataHora'
         Visible = True
       end>
   end

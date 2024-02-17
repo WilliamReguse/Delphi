@@ -67,7 +67,7 @@ end;
 
 procedure TTfmEntrada.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
 begin
-DataModule2.tbMovimentacoes.FieldByName('hr_mov').Value := now;
+DataModule2.tbMovimentacoes.FieldByName('DataHora').Value := now;
 end;
 
 end.

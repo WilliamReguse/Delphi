@@ -18,7 +18,7 @@ object Estoque: TEstoque
     Width = 939
     Height = 467
     Align = alBottom
-    DataSource = DataModule2.DSEst
+    DataSource = DataModule2.dsMovimentacoes
     ReadOnly = True
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -54,7 +54,7 @@ object Estoque: TEstoque
       end
       item
         Expanded = False
-        FieldName = 'ID'
+        FieldName = 'id'
         Visible = True
       end>
   end

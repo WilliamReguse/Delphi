@@ -14,20 +14,6 @@ type
   TDataModule2 = class(TDataModule)
     FDConnection1: TFDConnection;
     FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
-    FDProduto: TFDTable;
-    DSProduto: TDataSource;
-    FDProdutoID: TIntegerField;
-    FDProdutoCODIGO: TIntegerField;
-    FDProdutoDESCRICAO: TStringField;
-    FDProdutoCOR: TIntegerField;
-    FDProdutoTAMANHO: TStringField;
-    FDEst: TFDTable;
-    FDEstCODIGO: TIntegerField;
-    FDEstCOR: TIntegerField;
-    FDEstTAM: TStringField;
-    DSEst: TDataSource;
-    FDEstQUANTIDADE: TIntegerField;
-    FDEstOBS: TStringField;
     sqlMovimentacoes: TFDQuery;
     dsSqlMovimentacoes: TDataSource;
     sqlValidaEstoque: TFDQuery;
@@ -42,11 +28,6 @@ type
     tbMovimentacoestipo: TStringField;
     tbMovimentacoesresponsavel: TStringField;
     tbMovimentacoesobservacoes: TMemoField;
-    FDEstID: TIntegerField;
-    FDEstNOME: TStringField;
-    FDEstFABRICANTE: TStringField;
-    FDEstVALIDADE: TDateField;
-    FDEstESTOQUEATUAL: TIntegerField;
     tbProdutos: TFDTable;
     tbProdutosid: TFDAutoIncField;
     tbProdutosnome: TStringField;
@@ -58,7 +39,7 @@ type
     sqlDiminuiEstoque: TFDCommand;
     dsMovimentacoes: TDataSource;
     dsMovProdutos: TDataSource;
-    tbMovimentacoeshr_mov: TDateTimeField;
+    tbMovimentacoesdataHora: TDateTimeField;
   private
     { Private declarations }
   public
