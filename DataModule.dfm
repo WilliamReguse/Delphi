@@ -31,16 +31,19 @@ object DataModule2: TDataModule2
   object sqlValidaEstoque: TFDQuery
     SQL.Strings = (
       'select * from estoque_produto')
-    Left = 144
+    Left = 176
     Top = 184
   end
   object dsValidaEstoque: TDataSource
     DataSet = sqlValidaEstoque
-    Left = 144
+    Left = 184
     Top = 232
   end
   object tbMovProdutos: TFDTable
     Active = True
+    AfterPost = tbMovProdutosAfterPost
+    BeforeDelete = tbMovProdutosBeforeDelete
+    AfterDelete = tbMovProdutosAfterDelete
     IndexName = 'idMovimentacao'
     MasterSource = dsMovimentacoes
     MasterFields = 'id'
@@ -67,9 +70,21 @@ object DataModule2: TDataModule2
       Origin = 'qtd'
       Required = True
     end
+    object tbMovProdutosDescricao: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Descricao'
+      LookupDataSet = tbProdutos
+      LookupKeyFields = 'id'
+      LookupResultField = 'nome'
+      KeyFields = 'idProduto'
+      Size = 30
+      Lookup = True
+    end
   end
   object tbMovimentacoes: TFDTable
     Active = True
+    BeforeDelete = tbMovimentacoesBeforeDelete
+    AfterScroll = tbMovimentacoesAfterScroll
     IndexFieldNames = 'id'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -156,7 +171,7 @@ object DataModule2: TDataModule2
         Name = 'pQtd'
         ParamType = ptInput
       end>
-    Left = 280
+    Left = 376
     Top = 184
   end
   object sqlDiminuiEstoque: TFDCommand
@@ -174,7 +189,7 @@ object DataModule2: TDataModule2
         Name = 'pQtd'
         ParamType = ptInput
       end>
-    Left = 400
+    Left = 496
     Top = 192
   end
   object dsMovimentacoes: TDataSource

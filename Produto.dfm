@@ -193,4 +193,18 @@ object CadProduto: TCadProduto
     TabOrder = 5
     OnClick = DBNavigator1Click
   end
+  object DBGrid1: TDBGrid
+    Left = 328
+    Top = 65
+    Width = 320
+    Height = 288
+    DataSource = DataModule2.dsProdutos
+    ReadOnly = True
+    TabOrder = 6
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
 end

@@ -12,6 +12,7 @@
   Font.Style = []
   Position = poScreenCenter
   WindowState = wsMaximized
+  OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
     Left = 32
@@ -56,18 +57,30 @@
     Caption = 'Quantidade'
   end
   object Label9: TLabel
-    Left = 769
+    Left = 744
     Top = 443
-    Width = 76
-    Height = 15
-    Caption = 'Total Produtos'
+    Width = 239
+    Height = 30
+    Caption = 'Quantidade Total Produto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
   end
-  object Label10: TLabel
-    Left = 865
+  object TxtTotal: TLabel
+    Left = 1013
     Top = 443
-    Width = 12
-    Height = 15
+    Width = 22
+    Height = 30
     Caption = '00'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
   end
   object Panel1: TPanel
     Left = 0
@@ -108,12 +121,12 @@
       Top = 9
       Width = 75
       Height = 25
-      Caption = 'SAIR'
+      Caption = 'Fechar'
       TabOrder = 0
       OnClick = Button1Click
     end
   end
-  object DBEdit1: TDBEdit
+  object EdtDthora: TDBEdit
     Left = 24
     Top = 162
     Width = 121
@@ -122,7 +135,7 @@
     DataSource = DataModule2.dsMovimentacoes
     TabOrder = 1
   end
-  object DBEdit2: TDBEdit
+  object EdtResponsavel: TDBEdit
     Left = 24
     Top = 240
     Width = 121
@@ -131,7 +144,7 @@
     DataSource = DataModule2.dsMovimentacoes
     TabOrder = 2
   end
-  object DBMemo1: TDBMemo
+  object TxtObs: TDBMemo
     Left = 24
     Top = 320
     Width = 185
@@ -169,6 +182,7 @@
     Width = 320
     Height = 305
     DataSource = DataModule2.dsMovimentacoes
+    ReadOnly = True
     TabOrder = 6
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -228,6 +242,7 @@
     Width = 320
     Height = 260
     DataSource = DataModule2.dsMovProdutos
+    ReadOnly = True
     TabOrder = 10
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -237,12 +252,27 @@
     Columns = <
       item
         Expanded = False
-        FieldName = 'Produto'
+        FieldName = 'id'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'quantidade'
+        FieldName = 'Descricao'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'idMovimentacao'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'idProduto'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'qtd'
         Visible = True
       end>
   end

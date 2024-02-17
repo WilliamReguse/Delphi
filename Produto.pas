@@ -24,6 +24,7 @@ type
     Button3: TButton;
     DBNavigator1: TDBNavigator;
     Button2: TButton;
+    DBGrid1: TDBGrid;
     procedure Button4Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
 
@@ -168,6 +169,8 @@ begin
   Button1.Enabled :=False;
   Button2.Enabled :=False;
   DBNavigator1.Enabled :=True;
+
+  Datamodule2.tbProdutos.Refresh;
 end;
 
 end.

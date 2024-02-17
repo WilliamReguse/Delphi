@@ -12,9 +12,9 @@ type
     Panel1: TPanel;
     MOVIMENTAÇÕES: TLabel;
     Button1: TButton;
-    DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
-    DBMemo1: TDBMemo;
+    EdtDthora: TDBEdit;
+    EdtResponsavel: TDBEdit;
+    TxtObs: TDBMemo;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -30,10 +30,11 @@ type
     Label8: TLabel;
     DBGrid2: TDBGrid;
     Label9: TLabel;
-    Label10: TLabel;
+    TxtTotal: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
     procedure Button2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -68,6 +69,11 @@ end;
 procedure TTfmEntrada.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
 begin
 DataModule2.tbMovimentacoes.FieldByName('DataHora').Value := now;
+end;
+
+procedure TTfmEntrada.FormShow(Sender: TObject);
+begin
+ Datamodule2.CalcTotal;
 end;
 
 end.
