@@ -118,6 +118,7 @@ object DataModule2: TDataModule2
   end
   object tbProdutos: TFDTable
     Active = True
+    BeforeDelete = tbProdutosBeforeDelete
     IndexFieldNames = 'id'
     Connection = FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]

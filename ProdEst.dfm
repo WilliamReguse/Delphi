@@ -14,11 +14,11 @@ object Estoque: TEstoque
   TextHeight = 15
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 47
+    Top = 41
     Width = 939
-    Height = 467
-    Align = alBottom
-    DataSource = DataModule2.dsMovimentacoes
+    Height = 473
+    Align = alClient
+    DataSource = DataModule2.dsProdutos
     ReadOnly = True
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -29,32 +29,22 @@ object Estoque: TEstoque
     Columns = <
       item
         Expanded = False
-        FieldName = 'CODIGO'
+        FieldName = 'nome'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'COR'
+        FieldName = 'fabricante'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'TAM'
+        FieldName = 'Validade'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'QUANTIDADE'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'OBS'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'id'
+        FieldName = 'estoqueAtual'
         Visible = True
       end>
   end
@@ -70,7 +60,7 @@ object Estoque: TEstoque
       Top = 8
       Width = 75
       Height = 25
-      Caption = 'Sair'
+      Caption = 'Fechar'
       TabOrder = 0
       OnClick = Button2Click
     end

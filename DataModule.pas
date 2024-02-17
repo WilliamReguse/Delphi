@@ -47,6 +47,7 @@ type
     procedure tbMovimentacoesAfterScroll(DataSet: TDataSet);
     procedure tbMovProdutosBeforeDelete(DataSet: TDataSet);
     procedure tbMovimentacoesBeforeDelete(DataSet: TDataSet);
+    procedure tbProdutosBeforeDelete(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -144,4 +145,13 @@ begin
 
 end;
 
+procedure TDataModule2.tbProdutosBeforeDelete(DataSet: TDataSet);
+begin
+ if (tbmovprodutos.RecordCount > 0)	 then
+ begin
+  showmessage('Produto vinculado na movimentação, Necessário realizar a exclusão. Impossível continuar');
+  abort;
+end;
+
+end;
 end.

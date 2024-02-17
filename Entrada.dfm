@@ -11,7 +11,6 @@
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
-  WindowState = wsMaximized
   OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
@@ -116,15 +115,6 @@
       Font.Style = []
       ParentFont = False
     end
-    object Button1: TButton
-      Left = 304
-      Top = 9
-      Width = 75
-      Height = 25
-      Caption = 'Fechar'
-      TabOrder = 0
-      OnClick = Button1Click
-    end
   end
   object EdtDthora: TDBEdit
     Left = 24
@@ -166,16 +156,6 @@
       'Sa'#237'da do Estoque')
     TabOrder = 4
   end
-  object DBNavigator1: TDBNavigator
-    Left = 232
-    Top = 47
-    Width = 224
-    Height = 25
-    DataSource = DataModule2.dsMovimentacoes
-    VisibleButtons = [nbInsert, nbDelete, nbPost, nbCancel]
-    TabOrder = 5
-    OnClick = DBNavigator1Click
-  end
   object DBGrid1: TDBGrid
     Left = 232
     Top = 104
@@ -183,7 +163,7 @@
     Height = 305
     DataSource = DataModule2.dsMovimentacoes
     ReadOnly = True
-    TabOrder = 6
+    TabOrder = 5
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -213,7 +193,7 @@
     Height = 25
     DataSource = DataModule2.dsMovProdutos
     VisibleButtons = [nbInsert, nbDelete, nbPost, nbCancel]
-    TabOrder = 7
+    TabOrder = 6
   end
   object DBLookupComboBox1: TDBLookupComboBox
     Left = 760
@@ -225,7 +205,7 @@
     KeyField = 'id'
     ListField = 'nome'
     ListSource = DataModule2.dsProdutos
-    TabOrder = 8
+    TabOrder = 7
   end
   object DBEdit4: TDBEdit
     Left = 928
@@ -234,7 +214,7 @@
     Height = 23
     DataField = 'qtd'
     DataSource = DataModule2.dsMovProdutos
-    TabOrder = 9
+    TabOrder = 8
   end
   object DBGrid2: TDBGrid
     Left = 744
@@ -243,7 +223,7 @@
     Height = 260
     DataSource = DataModule2.dsMovProdutos
     ReadOnly = True
-    TabOrder = 10
+    TabOrder = 9
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -275,5 +255,50 @@
         FieldName = 'qtd'
         Visible = True
       end>
+  end
+  object Button2: TButton
+    Left = 24
+    Top = 451
+    Width = 75
+    Height = 25
+    Caption = 'Incluir'
+    TabOrder = 10
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 295
+    Top = 451
+    Width = 75
+    Height = 25
+    Caption = 'Confirmar'
+    TabOrder = 11
+    OnClick = Button3Click
+  end
+  object Excluir: TButton
+    Left = 111
+    Top = 451
+    Width = 75
+    Height = 25
+    Caption = 'Excluir'
+    TabOrder = 12
+    OnClick = ExcluirClick
+  end
+  object Button1: TButton
+    Left = 384
+    Top = 451
+    Width = 75
+    Height = 25
+    Caption = 'Fechar'
+    TabOrder = 13
+    OnClick = Button1Click
+  end
+  object Button4: TButton
+    Left = 206
+    Top = 451
+    Width = 75
+    Height = 25
+    Caption = 'Cancelar'
+    TabOrder = 14
+    OnClick = Button4Click
   end
 end

@@ -6,7 +6,6 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls,
   Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, Vcl.DBCtrls, Vcl.Mask;
-
 type
   TCadProduto = class(TForm)
     Panel2: TPanel;
@@ -26,19 +25,21 @@ type
     Button2: TButton;
     DBGrid1: TDBGrid;
     procedure Button4Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
-
-
     procedure DBEdit1Enter(Sender: TObject);
     procedure DBEdit2Enter(Sender: TObject);
     procedure DBEdit4Enter(Sender: TObject);
     procedure DBEdit3Enter(Sender: TObject);
-
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+
+
+
+
+
 
 
   private
@@ -79,12 +80,14 @@ begin
     end;
 
     begin
-       DBEDIT1.Enabled :=FALSE;
-     DBEDIT2.Enabled :=FALSE;
-     DBEDIT3.Enabled :=FALSE;
-     DBEDIT4.Enabled :=FALSE;
+       DBEDIT1.Enabled :=TRUE;
+     DBEDIT2.Enabled :=TRUE;
+     DBEDIT3.Enabled :=TRUE;
+     DBEDIT4.Enabled :=TRUE;
+     Dbnavigator1.Enabled :=TRUE;
+     button4.Enabled :=TRUE;
 
-       DataModule2.tbProdutos.Post;
+       DataModule2.tbProdutos.append;
     end;
 end;
 
@@ -97,13 +100,20 @@ begin
   DBEDIT3.Enabled :=FALSE;
   DBEDIT4.Enabled :=FALSE;
   Button1.Enabled :=False;
-  DbNavigator1.Enabled :=True
+  DbNavigator1.Enabled :=True;
+  button3.Enabled :=True;
+  button2.Enabled :=False;
+  button4.Enabled :=True;
+
+  datamodule2.tbProdutos.Cancel;
 
 end;
 
+
+
 procedure TCadProduto.Button3Click(Sender: TObject);
 begin
-  DataModule2.tbprodutos.Delete;
+Datamodule2.tbProdutos.Delete;
 end;
 
 procedure TCadProduto.Button4Click(Sender: TObject);
@@ -114,6 +124,23 @@ end;
 
 
 
+
+
+
+procedure TCadProduto.Button5Click(Sender: TObject);
+begin
+ DBEDIT1.Enabled :=TRUE;
+  DBEDIT2.Enabled :=TRUE;
+  DBEDIT3.Enabled :=TRUE;
+  DBEDIT4.Enabled :=TRUE;
+  Button1.Enabled :=TRUE;
+  DBNavigator1.Enabled :=False;
+  Button3.Enabled :=False;
+  DataModule2.tbProdutos.FieldByName('validade').Value := now;
+
+  Button2.Enabled :=True;
+Datamodule2.tbprodutos.append;
+end;
 
 procedure TCadProduto.DBEdit1Enter(Sender: TObject);
 begin
@@ -157,7 +184,8 @@ begin
   DBNavigator1.Enabled :=False;
   Button3.Enabled :=False;
   DataModule2.tbProdutos.FieldByName('validade').Value := now;
-  Button2.Enabled :=True
+  Button2.Enabled :=True;
+  button4.Enabled :=False;
 end;
 
 procedure TCadProduto.FormShow(Sender: TObject);
@@ -169,6 +197,7 @@ begin
   Button1.Enabled :=False;
   Button2.Enabled :=False;
   DBNavigator1.Enabled :=True;
+  button3.Enabled :=True;
 
   Datamodule2.tbProdutos.Refresh;
 end;

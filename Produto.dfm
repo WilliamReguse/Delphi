@@ -85,7 +85,7 @@ object CadProduto: TCadProduto
     Height = 41
     TabOrder = 0
     object Button4: TButton
-      Left = 464
+      Left = 340
       Top = 8
       Width = 75
       Height = 25
@@ -94,7 +94,7 @@ object CadProduto: TCadProduto
       OnClick = Button4Click
     end
     object Button1: TButton
-      Left = 278
+      Left = 178
       Top = 8
       Width = 75
       Height = 25
@@ -103,7 +103,7 @@ object CadProduto: TCadProduto
       OnClick = Button1Click
     end
     object Button3: TButton
-      Left = 189
+      Left = 97
       Top = 8
       Width = 75
       Height = 25
@@ -112,7 +112,7 @@ object CadProduto: TCadProduto
       OnClick = Button3Click
     end
     object Button2: TButton
-      Left = 368
+      Left = 259
       Top = 8
       Width = 75
       Height = 25
@@ -157,8 +157,8 @@ object CadProduto: TCadProduto
     Top = 320
     Width = 121
     Height = 33
-    DataField = 'qtd'
-    DataSource = DataModule2.dsMovProdutos
+    DataField = 'estoqueAtual'
+    DataSource = DataModule2.dsProdutos
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -184,9 +184,9 @@ object CadProduto: TCadProduto
     TabOrder = 4
   end
   object DBNavigator1: TDBNavigator
-    Left = 24
+    Left = 30
     Top = 469
-    Width = 144
+    Width = 69
     Height = 25
     DataSource = DataModule2.dsProdutos
     VisibleButtons = [nbInsert]
@@ -196,7 +196,7 @@ object CadProduto: TCadProduto
   object DBGrid1: TDBGrid
     Left = 328
     Top = 65
-    Width = 320
+    Width = 425
     Height = 288
     DataSource = DataModule2.dsProdutos
     ReadOnly = True
@@ -206,5 +206,26 @@ object CadProduto: TCadProduto
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'fabricante'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'validade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'estoqueAtual'
+        Visible = True
+      end>
   end
 end
