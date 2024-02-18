@@ -86,6 +86,9 @@ begin
      DBEDIT4.Enabled :=TRUE;
      Dbnavigator1.Enabled :=TRUE;
      button4.Enabled :=TRUE;
+     button3.Enabled :=TRUE;
+     button1.Enabled :=FALSE;
+     button2.Enabled :=FALSE;
 
        DataModule2.tbProdutos.append;
     end;
@@ -129,7 +132,7 @@ end;
 
 procedure TCadProduto.Button5Click(Sender: TObject);
 begin
- DBEDIT1.Enabled :=TRUE;
+  DBEDIT1.Enabled :=TRUE;
   DBEDIT2.Enabled :=TRUE;
   DBEDIT3.Enabled :=TRUE;
   DBEDIT4.Enabled :=TRUE;
@@ -137,8 +140,9 @@ begin
   DBNavigator1.Enabled :=False;
   Button3.Enabled :=False;
   DataModule2.tbProdutos.FieldByName('validade').Value := now;
-
   Button2.Enabled :=True;
+  button4.Enabled :=False;
+
 Datamodule2.tbprodutos.append;
 end;
 

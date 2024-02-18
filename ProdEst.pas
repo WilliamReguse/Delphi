@@ -12,7 +12,6 @@ type
     DBGrid1: TDBGrid;
     Button2: TButton;
     Panel1: TPanel;
-    Consultar: TButton;
     procedure Button2Click(Sender: TObject);
   private
     { Private declarations }

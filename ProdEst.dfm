@@ -64,13 +64,5 @@ object Estoque: TEstoque
       TabOrder = 0
       OnClick = Button2Click
     end
-    object Consultar: TButton
-      Left = 16
-      Top = 8
-      Width = 75
-      Height = 25
-      Caption = 'Consultar'
-      TabOrder = 1
-    end
   end
 end

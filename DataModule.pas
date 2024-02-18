@@ -148,10 +148,10 @@ end;
 
 procedure TDataModule2.tbProdutosBeforeDelete(DataSet: TDataSet);
 begin
- if (tbmovprodutos.RecordCount > 0)	 then
- begin
-  showmessage('Produto vinculado na movimentação, Necessário realizar a exclusão. Impossível continuar');
-  abort;
+if tbprodutos.FieldByName('EstoqueAtual').AsInteger > 0 then
+begin
+  ShowMessage('Produto vinculado na movimentação. Necessário realizar a exclusão. Impossível continuar.');
+  Abort;
 end;
 
 end;
