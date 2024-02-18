@@ -55,7 +55,7 @@ implementation
 
 {$R *.dfm}
 
-uses Banco, DataModule;
+uses DataModule;
 
 
 

@@ -41,6 +41,7 @@ type
     dsMovProdutos: TDataSource;
     tbMovimentacoesdataHora: TDateTimeField;
     tbMovProdutosDescricao: TStringField;
+    sqlConsultaEstoque: TFDCommand;
     procedure tbMovProdutosAfterPost(DataSet: TDataSet);
     procedure tbMovProdutosAfterDelete(DataSet: TDataSet);
     procedure CalcTotal;

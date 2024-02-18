@@ -203,4 +203,11 @@ object DataModule2: TDataModule2
     Left = 192
     Top = 96
   end
+  object sqlConsultaEstoque: TFDCommand
+    Connection = FDConnection1
+    CommandText.Strings = (
+      'Select * from Produtos')
+    Left = 368
+    Top = 256
+  end
 end
