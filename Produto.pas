@@ -77,6 +77,7 @@ begin
    if DBEDIT2.Text = '' then
     begin
       Application.MessageBox('Impossivel cadastrar produto sem fabricante','Preencha o Campo',MB_ICONEXCLAMATION+MB_OK);
+      datamodule2.tbprodutos.cancel;
     end;
 
     begin
@@ -190,6 +191,7 @@ begin
   DataModule2.tbProdutos.FieldByName('validade').Value := now;
   Button2.Enabled :=True;
   button4.Enabled :=False;
+  DBEDIT1.SetFocus;
 end;
 
 procedure TCadProduto.FormShow(Sender: TObject);

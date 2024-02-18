@@ -104,6 +104,7 @@ if edtresponsavel.Text = '' then
      Excluir.Enabled :=True;
      button2.Enabled :=True;
      button1.Enabled :=True;
+     button4.Enabled :=False;
 
 
      Datamodule2.tbMovimentacoes.Post;
