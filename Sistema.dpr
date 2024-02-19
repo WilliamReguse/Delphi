@@ -6,8 +6,8 @@ uses
   Produto in 'Produto.pas' {CadProduto},
   Entrada in 'Entrada.pas' {TfmEntrada},
   ProdEst in 'ProdEst.pas' {Estoque},
-  DataModule in 'DataModule.pas' {DataModule2: TDataModule};
-
+  DataModule in 'DataModule.pas' {DataModule2: TDataModule},
+  UnitConsultaMov in 'UnitConsultaMov.pas' {ConsultaMov};
 
 {$R *.res}
 
@@ -19,5 +19,6 @@ begin
   Application.CreateForm(TTfmEntrada, TfmEntrada);
   Application.CreateForm(TEstoque, Estoque);
   Application.CreateForm(TDataModule2, DataModule2);
+  Application.CreateForm(TConsultaMov, ConsultaMov);
   Application.Run;
 end.

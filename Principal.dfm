@@ -26,6 +26,10 @@ object Form1: TForm1
         Caption = 'Entrada/Saida Produto'
         OnClick = Entrada1Click
       end
+      object ConsultaMovimentaes1: TMenuItem
+        Caption = 'Consulta Movimenta'#231#245'es'
+        OnClick = ConsultaMovimentaes1Click
+      end
     end
     object ConsultaEst1: TMenuItem
       Caption = 'Consulta Est.'

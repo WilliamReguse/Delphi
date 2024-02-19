@@ -16,8 +16,6 @@ type
     FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
     sqlMovimentacoes: TFDQuery;
     dsSqlMovimentacoes: TDataSource;
-    sqlValidaEstoque: TFDQuery;
-    dsValidaEstoque: TDataSource;
     tbMovProdutos: TFDTable;
     tbMovProdutosid: TFDAutoIncField;
     tbMovProdutosidMovimentacao: TIntegerField;
@@ -41,7 +39,13 @@ type
     dsMovProdutos: TDataSource;
     tbMovimentacoesdataHora: TDateTimeField;
     tbMovProdutosDescricao: TStringField;
-    sqlConsultaEstoque: TFDCommand;
+    sqlConsultaMovimentacoes: TFDQuery;
+    dsSqlConsultaMovimentacoes: TDataSource;
+    sqlConsultaMovimentacoesid: TFDAutoIncField;
+    sqlConsultaMovimentacoesidmovimentacao: TIntegerField;
+    sqlConsultaMovimentacoesidProduto: TIntegerField;
+    sqlConsultaMovimentacoesqtd: TIntegerField;
+    sqlConsultaMovimentacoesDescricao: TStringField;
     procedure tbMovProdutosAfterPost(DataSet: TDataSet);
     procedure tbMovProdutosAfterDelete(DataSet: TDataSet);
     procedure CalcTotal;

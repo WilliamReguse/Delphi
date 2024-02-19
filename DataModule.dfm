@@ -17,6 +17,7 @@ object DataModule2: TDataModule2
     Top = 40
   end
   object sqlMovimentacoes: TFDQuery
+    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT * FROM movimentacoes')
@@ -26,17 +27,6 @@ object DataModule2: TDataModule2
   object dsSqlMovimentacoes: TDataSource
     DataSet = sqlMovimentacoes
     Left = 32
-    Top = 232
-  end
-  object sqlValidaEstoque: TFDQuery
-    SQL.Strings = (
-      'select * from estoque_produto')
-    Left = 176
-    Top = 184
-  end
-  object dsValidaEstoque: TDataSource
-    DataSet = sqlValidaEstoque
-    Left = 184
     Top = 232
   end
   object tbMovProdutos: TFDTable
@@ -203,11 +193,51 @@ object DataModule2: TDataModule2
     Left = 192
     Top = 96
   end
-  object sqlConsultaEstoque: TFDCommand
+  object sqlConsultaMovimentacoes: TFDQuery
+    Active = True
+    IndexFieldNames = 'idmovimentacao'
+    MasterSource = dsSqlMovimentacoes
+    MasterFields = 'id'
     Connection = FDConnection1
-    CommandText.Strings = (
-      'Select * from Produtos')
-    Left = 368
+    SQL.Strings = (
+      'select * from movimentacoes_produtos')
+    Left = 176
+    Top = 184
+    object sqlConsultaMovimentacoesid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = False
+    end
+    object sqlConsultaMovimentacoesidmovimentacao: TIntegerField
+      FieldName = 'idmovimentacao'
+      Origin = 'idmovimentacao'
+      Required = True
+    end
+    object sqlConsultaMovimentacoesidProduto: TIntegerField
+      FieldName = 'idProduto'
+      Origin = 'idProduto'
+      Required = True
+    end
+    object sqlConsultaMovimentacoesqtd: TIntegerField
+      FieldName = 'qtd'
+      Origin = 'qtd'
+      Required = True
+    end
+    object sqlConsultaMovimentacoesDescricao: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Descricao'
+      LookupDataSet = tbProdutos
+      LookupKeyFields = 'id'
+      LookupResultField = 'nome'
+      KeyFields = 'idProduto'
+      Size = 30
+      Lookup = True
+    end
+  end
+  object dsSqlConsultaMovimentacoes: TDataSource
+    DataSet = sqlConsultaMovimentacoes
+    Left = 176
     Top = 256
   end
 end

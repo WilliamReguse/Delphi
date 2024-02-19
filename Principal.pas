@@ -14,10 +14,12 @@ type
     ConsultaEst1: TMenuItem;
     Sair1: TMenuItem;
     Entrada1: TMenuItem;
+    ConsultaMovimentaes1: TMenuItem;
     procedure Sair1Click(Sender: TObject);
     procedure Cadastro1Click(Sender: TObject);
     procedure ConsultaEst1Click(Sender: TObject);
     procedure Entrada1Click(Sender: TObject);
+    procedure ConsultaMovimentaes1Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -32,7 +34,7 @@ implementation
 
 {$R *.dfm}
 
-uses Produto, Entrada, ProdEst;
+uses Produto, Entrada, ProdEst, UnitConsultaMov;
 
 procedure TForm1.Cadastro1Click(Sender: TObject);
 begin
@@ -45,6 +47,11 @@ begin
 end;
 
 
+
+procedure TForm1.ConsultaMovimentaes1Click(Sender: TObject);
+begin
+ Consultamov.ShowModal;
+end;
 
 procedure TForm1.Entrada1Click(Sender: TObject);
 begin
