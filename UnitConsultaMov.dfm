@@ -10,6 +10,7 @@ object ConsultaMov: TConsultaMov
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -18,8 +19,6 @@ object ConsultaMov: TConsultaMov
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitTop = 1
-    ExplicitWidth = 624
     object Label1: TLabel
       Left = 15
       Top = 6
@@ -41,7 +40,6 @@ object ConsultaMov: TConsultaMov
     Height = 80
     Align = alTop
     TabOrder = 1
-    ExplicitWidth = 624
     object Label2: TLabel
       Left = 215
       Top = 6
@@ -64,6 +62,7 @@ object ConsultaMov: TConsultaMov
       Caption = 'Consultar'
       DisabledImageName = 'BtnMovConsultar'
       TabOrder = 0
+      OnClick = Button1Click
     end
   end
   object DtMovIni: TMaskEdit

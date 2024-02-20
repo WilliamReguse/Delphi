@@ -23,6 +23,13 @@ object DataModule2: TDataModule2
       'SELECT * FROM movimentacoes')
     Left = 40
     Top = 176
+    ParamData = <
+      item
+        Name = 'pDtIni'
+      end
+      item
+        Name = 'pDtFim'
+      end>
   end
   object dsSqlMovimentacoes: TDataSource
     DataSet = sqlMovimentacoes
