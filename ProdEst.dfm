@@ -56,13 +56,23 @@ object Estoque: TEstoque
     Align = alTop
     TabOrder = 1
     object Button2: TButton
-      Left = 192
-      Top = 8
+      Left = 264
+      Top = 9
       Width = 75
       Height = 25
       Caption = 'Fechar'
       TabOrder = 0
       OnClick = Button2Click
+    end
+    object Consultar: TBitBtn
+      Left = 168
+      Top = 10
+      Width = 75
+      Height = 25
+      Caption = 'Consultar'
+      DisabledImageName = 'Consultar'
+      TabOrder = 1
+      OnClick = ConsultarClick
     end
   end
 end

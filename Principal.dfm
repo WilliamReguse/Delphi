@@ -18,7 +18,14 @@ object Form1: TForm1
     Top = 248
     object Cadastro1: TMenuItem
       Caption = 'Cadastro'
-      OnClick = Cadastro1Click
+      object CadastroDeProdutos1: TMenuItem
+        Caption = 'Cadastro De Produtos'
+        OnClick = CadastroDeProdutos1Click
+      end
+      object CadastrodeClientes1: TMenuItem
+        Caption = 'Cadastro De Clientes'
+        OnClick = CadastrodeClientes1Click
+      end
     end
     object Movimentacao1: TMenuItem
       Caption = 'Movimentacao'

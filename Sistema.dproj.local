@@ -2,36 +2,39 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2024/02/12 18:38:08.000.180,=C:\Users\Sandro\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/02/12 18:38:39.000.120,C:\Users\Sandro\Desktop\Sistema\Principal.pas=C:\Users\Sandro\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/02/12 18:38:39.000.120,C:\Users\Sandro\Desktop\Sistema\Principal.dfm=C:\Users\Sandro\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2024/02/12 18:38:51.000.416,C:\Users\Sandro\Desktop\Sistema\Sistema.dproj=C:\Users\Sandro\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/02/12 18:38:39.000.120,C:\Users\Sandro\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Sandro\Desktop\Sistema\Principal.pas</Transaction>
+    <Transaction>2024/02/12 18:38:39.000.120,C:\Users\Sandro\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Sandro\Desktop\Sistema\Principal.dfm</Transaction>
+    <Transaction>2024/02/12 18:38:51.000.416,C:\Users\Sandro\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Sandro\Desktop\Sistema\Sistema.dproj</Transaction>
     <Transaction>2024/02/12 19:20:17.000.942,=C:\Users\Sandro\Desktop\Sistema\Unit1.pas</Transaction>
-    <Transaction>2024/02/12 19:43:00.000.372,C:\Users\Sandro\Desktop\Sistema\Unit1.pas=C:\Users\Sandro\Desktop\Sistema\Banco.pas</Transaction>
-    <Transaction>2024/02/12 19:43:00.000.372,C:\Users\Sandro\Desktop\Sistema\Unit1.dfm=C:\Users\Sandro\Desktop\Sistema\Banco.dfm</Transaction>
+    <Transaction>2024/02/12 19:43:00.000.372,C:\Users\Sandro\Desktop\Sistema\Banco.dfm=C:\Users\Sandro\Desktop\Sistema\Unit1.dfm</Transaction>
+    <Transaction>2024/02/12 19:43:00.000.372,C:\Users\Sandro\Desktop\Sistema\Banco.pas=C:\Users\Sandro\Desktop\Sistema\Unit1.pas</Transaction>
     <Transaction>2024/02/12 19:55:15.000.496,=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
-    <Transaction>2024/02/12 19:55:50.000.588,C:\Users\Sandro\Desktop\Sistema\Produto.dfm=C:\Users\Sandro\Desktop\Sistema\Unit2.dfm</Transaction>
-    <Transaction>2024/02/12 19:55:50.000.588,C:\Users\Sandro\Desktop\Sistema\Produto.pas=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
+    <Transaction>2024/02/12 19:55:50.000.588,C:\Users\Sandro\Desktop\Sistema\Unit2.dfm=C:\Users\Sandro\Desktop\Sistema\Produto.dfm</Transaction>
+    <Transaction>2024/02/12 19:55:50.000.588,C:\Users\Sandro\Desktop\Sistema\Unit2.pas=C:\Users\Sandro\Desktop\Sistema\Produto.pas</Transaction>
     <Transaction>2024/02/12 20:37:32.000.465,=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
-    <Transaction>2024/02/12 20:38:39.000.480,C:\Users\Sandro\Desktop\Sistema\Entrada.pas=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
-    <Transaction>2024/02/12 20:38:39.000.480,C:\Users\Sandro\Desktop\Sistema\Entrada.dfm=C:\Users\Sandro\Desktop\Sistema\Unit2.dfm</Transaction>
+    <Transaction>2024/02/12 20:38:39.000.480,C:\Users\Sandro\Desktop\Sistema\Unit2.pas=C:\Users\Sandro\Desktop\Sistema\Entrada.pas</Transaction>
+    <Transaction>2024/02/12 20:38:39.000.480,C:\Users\Sandro\Desktop\Sistema\Unit2.dfm=C:\Users\Sandro\Desktop\Sistema\Entrada.dfm</Transaction>
     <Transaction>2024/02/12 20:44:40.000.290,=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
-    <Transaction>2024/02/12 20:45:36.000.865,C:\Users\Sandro\Desktop\Sistema\ProdEst.dfm=C:\Users\Sandro\Desktop\Sistema\Unit2.dfm</Transaction>
-    <Transaction>2024/02/12 20:45:36.000.865,C:\Users\Sandro\Desktop\Sistema\ProdEst.pas=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
+    <Transaction>2024/02/12 20:45:36.000.865,C:\Users\Sandro\Desktop\Sistema\Unit2.pas=C:\Users\Sandro\Desktop\Sistema\ProdEst.pas</Transaction>
+    <Transaction>2024/02/12 20:45:36.000.865,C:\Users\Sandro\Desktop\Sistema\Unit2.dfm=C:\Users\Sandro\Desktop\Sistema\ProdEst.dfm</Transaction>
     <Transaction>2024/02/12 21:44:06.000.099,=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
-    <Transaction>2024/02/12 21:44:16.000.583,C:\Users\Sandro\Desktop\Sistema\DataModule.dfm=C:\Users\Sandro\Desktop\Sistema\Unit2.dfm</Transaction>
-    <Transaction>2024/02/12 21:44:16.000.583,C:\Users\Sandro\Desktop\Sistema\DataModule.pas=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
+    <Transaction>2024/02/12 21:44:16.000.583,C:\Users\Sandro\Desktop\Sistema\Unit2.dfm=C:\Users\Sandro\Desktop\Sistema\DataModule.dfm</Transaction>
+    <Transaction>2024/02/12 21:44:16.000.583,C:\Users\Sandro\Desktop\Sistema\Unit2.pas=C:\Users\Sandro\Desktop\Sistema\DataModule.pas</Transaction>
     <Transaction>2024/02/13 18:46:08.000.199,C:\Users\Sandro\Desktop\Sistema\Banco.pas=</Transaction>
     <Transaction>2024/02/14 19:59:08.000.825,=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
     <Transaction>2024/02/14 20:10:40.000.193,=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
-    <Transaction>2024/02/14 20:11:38.000.726,C:\Users\Sandro\Desktop\Sistema\UnitSaida.dfm=C:\Users\Sandro\Desktop\Sistema\Unit2.dfm</Transaction>
-    <Transaction>2024/02/14 20:11:38.000.726,C:\Users\Sandro\Desktop\Sistema\UnitSaida.pas=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
+    <Transaction>2024/02/14 20:11:38.000.726,C:\Users\Sandro\Desktop\Sistema\Unit2.dfm=C:\Users\Sandro\Desktop\Sistema\UnitSaida.dfm</Transaction>
+    <Transaction>2024/02/14 20:11:38.000.726,C:\Users\Sandro\Desktop\Sistema\Unit2.pas=C:\Users\Sandro\Desktop\Sistema\UnitSaida.pas</Transaction>
     <Transaction>2024/02/14 20:29:34.000.111,=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
-    <Transaction>2024/02/14 20:30:11.000.120,C:\Users\Sandro\Desktop\Sistema\Unit2.dfm=C:\Users\Sandro\Desktop\Sistema\CadMov.dfm</Transaction>
-    <Transaction>2024/02/14 20:30:11.000.120,C:\Users\Sandro\Desktop\Sistema\Unit2.pas=C:\Users\Sandro\Desktop\Sistema\CadMov.pas</Transaction>
+    <Transaction>2024/02/14 20:30:11.000.120,C:\Users\Sandro\Desktop\Sistema\CadMov.dfm=C:\Users\Sandro\Desktop\Sistema\Unit2.dfm</Transaction>
+    <Transaction>2024/02/14 20:30:11.000.120,C:\Users\Sandro\Desktop\Sistema\CadMov.pas=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
     <Transaction>2024/02/14 20:38:42.000.426,C:\Users\Sandro\Desktop\Sistema\UnitSaida.pas=</Transaction>
     <Transaction>2024/02/19 19:32:06.000.963,=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
-    <Transaction>2024/02/19 19:32:18.000.347,C:\Users\Sandro\Desktop\Sistema\Unit2.dfm=C:\Users\Sandro\Desktop\Sistema\UnitConsultaMov.dfm</Transaction>
-    <Transaction>2024/02/19 19:32:18.000.347,C:\Users\Sandro\Desktop\Sistema\Unit2.pas=C:\Users\Sandro\Desktop\Sistema\UnitConsultaMov.pas</Transaction>
+    <Transaction>2024/02/19 19:32:18.000.347,C:\Users\Sandro\Desktop\Sistema\UnitConsultaMov.pas=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
+    <Transaction>2024/02/19 19:32:18.000.347,C:\Users\Sandro\Desktop\Sistema\UnitConsultaMov.dfm=C:\Users\Sandro\Desktop\Sistema\Unit2.dfm</Transaction>
+    <Transaction>2024/02/21 21:38:54.356,=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
+    <Transaction>2024/02/21 21:39:37.412,C:\Users\Sandro\Desktop\Sistema\UnitCadCliente.pas=C:\Users\Sandro\Desktop\Sistema\Unit2.pas</Transaction>
+    <Transaction>2024/02/21 21:39:37.412,C:\Users\Sandro\Desktop\Sistema\UnitCadCliente.dfm=C:\Users\Sandro\Desktop\Sistema\Unit2.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="DataModule.pas"/>
@@ -46,5 +49,7 @@
     <File Path="Produto.dfm"/>
     <File Path="UnitConsultaMov.pas"/>
     <File Path="UnitConsultaMov.dfm"/>
+    <File Path="UnitCadCliente.pas"/>
+    <File Path="UnitCadCliente.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

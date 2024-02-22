@@ -147,6 +147,10 @@
             <Form>ConsultaMov</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UnitCadCliente.pas">
+            <Form>CadCliente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -42,6 +42,7 @@ type
     procedure ExcluirClick(Sender: TObject);
     procedure Button4Click(Sender: TObject);
 
+
   private
     { Private declarations }
   public
@@ -107,6 +108,7 @@ if edtresponsavel.Text = '' then
      button4.Enabled :=False;
 
 
+
      Datamodule2.tbMovimentacoes.Post;
      DataModule2.tbMovimentacoes.Refresh;
     end;
@@ -124,6 +126,7 @@ begin
  button2.Enabled :=True;
  button1.Enabled :=True;
 
+
  datamodule2.tbMovimentacoes.Cancel;
 end;
 
@@ -131,6 +134,8 @@ procedure TTfmEntrada.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
 begin
 DataModule2.tbMovimentacoes.FieldByName('DataHora').Value := now;
 end;
+
+
 
 procedure TTfmEntrada.ExcluirClick(Sender: TObject);
 begin

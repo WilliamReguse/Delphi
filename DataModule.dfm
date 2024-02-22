@@ -26,9 +26,11 @@ object DataModule2: TDataModule2
     ParamData = <
       item
         Name = 'pDtIni'
+        ParamType = ptInput
       end
       item
         Name = 'pDtFim'
+        ParamType = ptInput
       end>
   end
   object dsSqlMovimentacoes: TDataSource
