@@ -21,9 +21,9 @@ type
     Label1: TLabel;
     Button1: TButton;
     Button3: TButton;
-    DBNavigator1: TDBNavigator;
     Button2: TButton;
     DBGrid1: TDBGrid;
+    Button5: TButton;
     procedure Button4Click(Sender: TObject);
     procedure DBEdit1Enter(Sender: TObject);
     procedure DBEdit2Enter(Sender: TObject);
@@ -85,11 +85,12 @@ begin
      DBEDIT2.Enabled :=TRUE;
      DBEDIT3.Enabled :=TRUE;
      DBEDIT4.Enabled :=TRUE;
-     Dbnavigator1.Enabled :=TRUE;
+     {Dbnavigator1.Enabled :=TRUE;}
      button4.Enabled :=TRUE;
      button3.Enabled :=TRUE;
      button1.Enabled :=FALSE;
      button2.Enabled :=FALSE;
+       Button5.Enabled := True;
 
        DataModule2.tbProdutos.append;
     end;
@@ -104,10 +105,11 @@ begin
   DBEDIT3.Enabled :=FALSE;
   DBEDIT4.Enabled :=FALSE;
   Button1.Enabled :=False;
-  DbNavigator1.Enabled :=True;
+  {DbNavigator1.Enabled :=True;}
   button3.Enabled :=True;
   button2.Enabled :=False;
   button4.Enabled :=True;
+    Button5.Enabled := True;
 
   datamodule2.tbProdutos.Cancel;
 
@@ -133,16 +135,21 @@ end;
 
 procedure TCadProduto.Button5Click(Sender: TObject);
 begin
+  Datamodule2.Tbprodutos.Insert;
+
   DBEDIT1.Enabled :=TRUE;
+  DbEDIT1.SetFocus;
   DBEDIT2.Enabled :=TRUE;
   DBEDIT3.Enabled :=TRUE;
   DBEDIT4.Enabled :=TRUE;
   Button1.Enabled :=TRUE;
-  DBNavigator1.Enabled :=False;
+  Button5.Enabled := False;
+  {DBNavigator1.Enabled :=False;}
   Button3.Enabled :=False;
-  DataModule2.tbProdutos.FieldByName('validade').Value := now;
+  {DataModule2.tbProdutos.FieldByName('validade').Value := now;}
   Button2.Enabled :=True;
   button4.Enabled :=False;
+  Button5.Enabled := False;
 
 Datamodule2.tbprodutos.append;
 end;
@@ -186,11 +193,12 @@ begin
   DBEDIT3.Enabled :=TRUE;
   DBEDIT4.Enabled :=TRUE;
   Button1.Enabled :=TRUE;
-  DBNavigator1.Enabled :=False;
-  Button3.Enabled :=False;
+  {DBNavigator1.Enabled :=False;}
   DataModule2.tbProdutos.FieldByName('validade').Value := now;
   Button2.Enabled :=True;
+  Button3.Enabled :=False;
   button4.Enabled :=False;
+  Button5.Enabled := False;
   DBEDIT1.SetFocus;
 end;
 
@@ -202,7 +210,8 @@ begin
   DBEDIT4.Enabled :=FALSE;
   Button1.Enabled :=False;
   Button2.Enabled :=False;
-  DBNavigator1.Enabled :=True;
+  {DBNavigator1.Enabled :=True;}
+    Button5.Enabled := True;
   button3.Enabled :=True;
 
   Datamodule2.tbProdutos.Refresh;

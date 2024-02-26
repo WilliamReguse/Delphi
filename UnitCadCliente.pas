@@ -10,28 +10,34 @@ uses
 type
   TCadCliente = class(TForm)
     Panel1: TPanel;
-    DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
+    edtNome: TDBEdit;
+    edtCPF: TDBEdit;
+    edtTelefone: TDBEdit;
     Label1: TLabel;
     Nome: TLabel;
     Label3: TLabel;
     Telefone: TLabel;
-    DBEdit4: TDBEdit;
+    edtEmail: TDBEdit;
     Email: TLabel;
-    DBEdit5: TDBEdit;
+    EdtEndereco: TDBEdit;
     Endereço: TLabel;
-    DBEdit6: TDBEdit;
+    edtCidade: TDBEdit;
     Cidade: TLabel;
-    DBEdit7: TDBEdit;
+    Edtnumero: TDBEdit;
     Número: TLabel;
-    Incluir: TBitBtn;
-    Alterar: TBitBtn;
-    Excluir: TBitBtn;
-    Fechar: TBitBtn;
-    Confirmar: TBitBtn;
-    Desistir: TBitBtn;
-    procedure FecharClick(Sender: TObject);
+    btnIncluir: TBitBtn;
+    btnAlterar: TBitBtn;
+    btnExcluir: TBitBtn;
+    btnFechar: TBitBtn;
+    btnConfirmar: TBitBtn;
+    btnDesistir: TBitBtn;
+    DBNavigator1: TDBNavigator;
+    procedure btnFecharClick(Sender: TObject);
+    procedure btnConfirmarClick(Sender: TObject);
+    procedure btnDesistirClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btnIncluirClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,9 +51,95 @@ implementation
 
 {$R *.dfm}
 
-procedure TCadCliente.FecharClick(Sender: TObject);
+uses DataModule;
+
+procedure TCadCliente.btnFecharClick(Sender: TObject);
 begin
  Cadcliente.Close;
+end;
+
+procedure TCadCliente.btnIncluirClick(Sender: TObject);
+begin
+  Datamodule2.tbClientes.Open;
+  Datamodule2.tbclientes.Next;
+  datamodule2.tbclientes.insert;
+  edtNome.Enabled := True;
+  edtCPF.Enabled := True;
+  edtTelefone.Enabled := True;
+  edtEmail.Enabled := True;
+  edtCidade.Enabled := True;
+  edtEndereco.Enabled := True;
+  edtNumero.Enabled := True;
+  btnConfirmar.Visible := True;
+  btnDesistir.Visible := True;
+  btnIncluir.Visible := False;
+  btnAlterar.Visible := False;
+  btnExcluir.Visible := False;
+  btnFechar.Visible := False;
+  DBNavigator1.Visible := False;
+
+
+end;
+
+procedure TCadCliente.btnConfirmarClick(Sender: TObject);
+begin
+  edtNome.Enabled := False;
+  edtCPF.Enabled := False;
+  edtTelefone.Enabled := False;
+  edtEmail.Enabled := False;
+  edtCidade.Enabled := False;
+  edtEndereco.Enabled := False;
+  edtNumero.Enabled := False;
+  btnConfirmar.Visible := False;
+  btnDesistir.Visible := False;
+  btnIncluir.Visible := True;
+  btnAlterar.Visible := True;
+  btnExcluir.Visible := True;
+  btnFechar.Visible := True;
+  DBNavigator1.Visible := True;
+
+ datamodule2.tbClientes.Post;
+ datamodule2.tbClientes.Refresh;
+end;
+
+procedure TCadCliente.btnDesistirClick(Sender: TObject);
+begin
+  edtNome.Enabled := False;
+  edtCPF.Enabled := False;
+  edtTelefone.Enabled := False;
+  edtEmail.Enabled := False;
+  edtCidade.Enabled := False;
+  edtEndereco.Enabled := False;
+  edtNumero.Enabled := False;
+  btnConfirmar.Visible := False;
+  btnDesistir.Visible := False;
+  btnIncluir.Visible := True;
+  btnAlterar.Visible := True;
+  btnExcluir.Visible := True;
+  btnFechar.Visible := True;
+  DBNavigator1.Visible := True;
+
+  Datamodule2.tbClientes.Cancel;
+end;
+
+procedure TCadCliente.btnExcluirClick(Sender: TObject);
+begin
+ Datamodule2.tbClientes.Delete;
+end;
+
+procedure TCadCliente.FormShow(Sender: TObject);
+begin
+  edtNome.Enabled := False;
+  edtCPF.Enabled := False;
+  edtTelefone.Enabled := False;
+  edtEmail.Enabled := False;
+  edtCidade.Enabled := False;
+  edtEndereco.Enabled := False;
+  edtNumero.Enabled := False;
+  btnConfirmar.Visible := False;
+  btnDesistir.Visible := False;
+  DBNavigator1.Enabled := True;
+
 end;
 
 end.

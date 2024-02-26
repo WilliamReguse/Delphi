@@ -249,4 +249,62 @@ object DataModule2: TDataModule2
     Left = 176
     Top = 256
   end
+  object tbClientes: TFDTable
+    Active = True
+    IndexFieldNames = 'ID'
+    Connection = FDConnection1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'estoque.clientes'
+    Left = 392
+    Top = 296
+    object tbClientesNome: TStringField
+      FieldName = 'Nome'
+      Origin = 'Nome'
+      Required = True
+      Size = 50
+    end
+    object tbClientesCPF: TIntegerField
+      FieldName = 'CPF'
+      Origin = 'CPF'
+      Required = True
+    end
+    object tbClientesTelefone: TIntegerField
+      FieldName = 'Telefone'
+      Origin = 'Telefone'
+      Required = True
+    end
+    object tbClientesEmail: TStringField
+      FieldName = 'Email'
+      Origin = 'Email'
+      Required = True
+      Size = 50
+    end
+    object tbClientesCidade: TStringField
+      FieldName = 'Cidade'
+      Origin = 'Cidade'
+      Required = True
+    end
+    object tbClientesEndereco: TStringField
+      FieldName = 'Endereco'
+      Origin = 'Endereco'
+      Required = True
+      Size = 30
+    end
+    object tbClientesNumero: TIntegerField
+      FieldName = 'Numero'
+      Origin = 'Numero'
+      Required = True
+    end
+    object tbClientesID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = False
+    end
+  end
+  object dsClientes: TDataSource
+    DataSet = tbClientes
+    Left = 424
+    Top = 384
+  end
 end

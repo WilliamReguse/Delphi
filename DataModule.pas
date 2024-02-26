@@ -46,6 +46,16 @@ type
     sqlConsultaMovimentacoesidProduto: TIntegerField;
     sqlConsultaMovimentacoesqtd: TIntegerField;
     sqlConsultaMovimentacoesDescricao: TStringField;
+    tbClientes: TFDTable;
+    dsClientes: TDataSource;
+    tbClientesNome: TStringField;
+    tbClientesCPF: TIntegerField;
+    tbClientesTelefone: TIntegerField;
+    tbClientesEmail: TStringField;
+    tbClientesCidade: TStringField;
+    tbClientesEndereco: TStringField;
+    tbClientesNumero: TIntegerField;
+    tbClientesID: TFDAutoIncField;
     procedure tbMovProdutosAfterPost(DataSet: TDataSet);
     procedure tbMovProdutosAfterDelete(DataSet: TDataSet);
     procedure CalcTotal;

@@ -120,6 +120,15 @@ object CadProduto: TCadProduto
       TabOrder = 3
       OnClick = Button2Click
     end
+    object Button5: TButton
+      Left = 16
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Incluir'
+      TabOrder = 4
+      OnClick = Button5Click
+    end
   end
   object DBEdit1: TDBEdit
     Left = 44
@@ -183,16 +192,6 @@ object CadProduto: TCadProduto
     ParentFont = False
     TabOrder = 4
   end
-  object DBNavigator1: TDBNavigator
-    Left = 30
-    Top = 469
-    Width = 69
-    Height = 25
-    DataSource = DataModule2.dsProdutos
-    VisibleButtons = [nbInsert]
-    TabOrder = 5
-    OnClick = DBNavigator1Click
-  end
   object DBGrid1: TDBGrid
     Left = 328
     Top = 65
@@ -200,7 +199,7 @@ object CadProduto: TCadProduto
     Height = 288
     DataSource = DataModule2.dsProdutos
     ReadOnly = True
-    TabOrder = 6
+    TabOrder = 5
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12

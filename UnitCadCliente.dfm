@@ -10,6 +10,7 @@
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Nome: TLabel
     Left = 24
@@ -67,9 +68,6 @@
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = 168
-    ExplicitTop = 96
-    ExplicitWidth = 185
     object Label1: TLabel
       Left = 8
       Top = -1
@@ -84,102 +82,133 @@
       ParentFont = False
     end
   end
-  object DBEdit1: TDBEdit
+  object edtNome: TDBEdit
     Left = 24
     Top = 80
     Width = 121
     Height = 23
+    DataField = 'Nome'
+    DataSource = DataModule2.dsClientes
     TabOrder = 1
   end
-  object DBEdit2: TDBEdit
+  object edtCPF: TDBEdit
     Left = 24
     Top = 149
     Width = 121
     Height = 23
+    DataField = 'CPF'
+    DataSource = DataModule2.dsClientes
     TabOrder = 2
   end
-  object DBEdit3: TDBEdit
+  object edtTelefone: TDBEdit
     Left = 24
     Top = 221
     Width = 121
     Height = 23
+    DataField = 'Telefone'
+    DataSource = DataModule2.dsClientes
     TabOrder = 3
   end
-  object DBEdit4: TDBEdit
+  object edtEmail: TDBEdit
     Left = 201
     Top = 221
     Width = 121
     Height = 23
+    DataField = 'Email'
+    DataSource = DataModule2.dsClientes
     TabOrder = 4
   end
-  object DBEdit5: TDBEdit
+  object EdtEndereco: TDBEdit
     Left = 24
     Top = 368
     Width = 121
     Height = 23
+    DataField = 'Endereco'
+    DataSource = DataModule2.dsClientes
     TabOrder = 5
   end
-  object DBEdit6: TDBEdit
+  object edtCidade: TDBEdit
     Left = 24
     Top = 296
     Width = 121
     Height = 23
+    DataField = 'Cidade'
+    DataSource = DataModule2.dsClientes
     TabOrder = 6
   end
-  object DBEdit7: TDBEdit
+  object Edtnumero: TDBEdit
     Left = 201
     Top = 368
     Width = 121
     Height = 23
+    DataField = 'Numero'
+    DataSource = DataModule2.dsClientes
     TabOrder = 7
   end
-  object Incluir: TBitBtn
-    Left = 24
+  object btnIncluir: TBitBtn
+    Left = 76
     Top = 472
     Width = 75
     Height = 25
     Caption = 'Incluir'
     TabOrder = 8
+    OnClick = btnIncluirClick
   end
-  object Alterar: TBitBtn
-    Left = 105
+  object btnAlterar: TBitBtn
+    Left = 157
     Top = 472
     Width = 75
     Height = 25
     Caption = 'Alterar'
+    DisabledImageName = 'Alterar'
     TabOrder = 9
   end
-  object Excluir: TBitBtn
-    Left = 186
+  object btnExcluir: TBitBtn
+    Left = 238
     Top = 472
     Width = 75
     Height = 25
     Caption = 'Excluir'
+    DisabledImageName = 'btnExcluir'
     TabOrder = 10
+    OnClick = btnExcluirClick
   end
-  object Fechar: TBitBtn
-    Left = 267
+  object btnFechar: TBitBtn
+    Left = 319
     Top = 472
     Width = 75
     Height = 25
     Caption = 'Fechar'
     TabOrder = 11
-    OnClick = FecharClick
+    OnClick = btnFecharClick
   end
-  object Confirmar: TBitBtn
-    Left = 89
+  object btnConfirmar: TBitBtn
+    Left = 141
     Top = 441
     Width = 75
     Height = 25
     Caption = 'Confirmar'
+    DisabledImageName = 'btnConfirmar'
     TabOrder = 12
+    OnClick = btnConfirmarClick
   end
-  object Desistir: TBitBtn
-    Left = 170
+  object btnDesistir: TBitBtn
+    Left = 222
     Top = 441
     Width = 75
     Height = 25
     Caption = 'Desistir'
+    DisabledImageName = 'btnDesistir'
     TabOrder = 13
+    OnClick = btnDesistirClick
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 8
+    Top = 471
+    Width = 62
+    Height = 25
+    DataSource = DataModule2.dsClientes
+    VisibleButtons = [nbPrior, nbNext]
+    TabOrder = 14
   end
 end
