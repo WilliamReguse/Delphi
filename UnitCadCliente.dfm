@@ -34,7 +34,7 @@
     Caption = 'Telefone'
   end
   object Email: TLabel
-    Left = 201
+    Left = 178
     Top = 200
     Width = 29
     Height = 15
@@ -55,11 +55,18 @@
     Caption = 'Cidade'
   end
   object Número: TLabel
-    Left = 201
+    Left = 178
     Top = 347
     Width = 44
     Height = 15
     Caption = 'N'#250'mero'
+  end
+  object Label2: TLabel
+    Left = 178
+    Top = 59
+    Width = 94
+    Height = 15
+    Caption = 'Data De Cadastro:'
   end
   object Panel1: TPanel
     Left = 0
@@ -110,7 +117,7 @@
     TabOrder = 3
   end
   object edtEmail: TDBEdit
-    Left = 201
+    Left = 178
     Top = 221
     Width = 121
     Height = 23
@@ -137,7 +144,7 @@
     TabOrder = 6
   end
   object Edtnumero: TDBEdit
-    Left = 201
+    Left = 178
     Top = 368
     Width = 121
     Height = 23
@@ -162,6 +169,7 @@
     Caption = 'Alterar'
     DisabledImageName = 'Alterar'
     TabOrder = 9
+    OnClick = btnAlterarClick
   end
   object btnExcluir: TBitBtn
     Left = 238
@@ -210,5 +218,35 @@
     DataSource = DataModule2.dsClientes
     VisibleButtons = [nbPrior, nbNext]
     TabOrder = 14
+  end
+  object edtDataCad: TDBEdit
+    Left = 178
+    Top = 80
+    Width = 121
+    Height = 23
+    DataField = 'Data_Cadastro'
+    DataSource = DataModule2.dsClientes
+    TabOrder = 15
+  end
+  object cbAtivo: TCheckBox
+    Left = 336
+    Top = 81
+    Width = 97
+    Height = 17
+    Caption = 'Ativo'
+    TabOrder = 16
+  end
+  object RgClassificacao: TRadioGroup
+    Left = 456
+    Top = 59
+    Width = 185
+    Height = 105
+    Caption = 'Classifica'#231#227'o'
+    Items.Strings = (
+      'Cliente'
+      'Funcion'#225'rio'
+      'Terceiro'
+      'Prospecto')
+    TabOrder = 17
   end
 end

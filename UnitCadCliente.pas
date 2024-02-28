@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.DBCtrls, Vcl.Buttons;
+  Vcl.DBCtrls, Vcl.Buttons, Data.DB, Vcl.Grids, Vcl.DBGrids;
 
 type
   TCadCliente = class(TForm)
@@ -32,12 +32,17 @@ type
     btnConfirmar: TBitBtn;
     btnDesistir: TBitBtn;
     DBNavigator1: TDBNavigator;
+    Label2: TLabel;
+    edtDataCad: TDBEdit;
+    cbAtivo: TCheckBox;
+    RgClassificacao: TRadioGroup;
     procedure btnFecharClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
     procedure btnDesistirClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnIncluirClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
+    procedure btnAlterarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,12 +82,47 @@ begin
   btnExcluir.Visible := False;
   btnFechar.Visible := False;
   DBNavigator1.Visible := False;
+  datamodule2.tbClientes.FieldByName('DATA_CADASTRO').Value := now;
+  cbAtivo.Enabled := True;
+  RgClassificacao.Enabled := True;
+  CbAtivo.Checked := True;
 
 
 end;
 
+procedure TCadCliente.btnAlterarClick(Sender: TObject);
+begin
+  edtNome.Enabled := True;
+  edtCPF.Enabled := True;
+  edtTelefone.Enabled := True;
+  edtEmail.Enabled := True;
+  edtCidade.Enabled := True;
+  edtEndereco.Enabled := True;
+  edtNumero.Enabled := True;
+  btnConfirmar.Visible := True;
+  btnDesistir.Visible := True;
+  btnIncluir.Visible := False;
+  btnAlterar.Visible := False;
+  btnExcluir.Visible := False;
+  btnFechar.Visible := False;
+  DBNavigator1.Visible := False;
+  CbAtivo.Enabled := True;
+  RgClassificacao.Enabled := True;
+
+  datamodule2.tbClientes.Post;
+end;
+
 procedure TCadCliente.btnConfirmarClick(Sender: TObject);
 begin
+  if edtNome.Text = '' then
+  begin
+    application.MessageBox('Impossível Continuar sem um Nome Informado','Favor Verificar',MB_ICONEXCLAMATION+MB_OK);
+  end;
+  if edtCPF.Text = '' then
+  begin
+    application.MessageBox('Impossível Continuar sem um CPF Informado','Favor Verificar',MB_ICONEXCLAMATION+MB_OK);
+  end;
+  Begin
   edtNome.Enabled := False;
   edtCPF.Enabled := False;
   edtTelefone.Enabled := False;
@@ -97,10 +137,17 @@ begin
   btnExcluir.Visible := True;
   btnFechar.Visible := True;
   DBNavigator1.Visible := True;
+  CbAtivo.Enabled := False;
+  RgClassificacao.Enabled := False;
+
 
  datamodule2.tbClientes.Post;
  datamodule2.tbClientes.Refresh;
+  End;
 end;
+
+
+
 
 procedure TCadCliente.btnDesistirClick(Sender: TObject);
 begin
@@ -118,6 +165,8 @@ begin
   btnExcluir.Visible := True;
   btnFechar.Visible := True;
   DBNavigator1.Visible := True;
+  cbAtivo.Enabled := False;
+  RgClassificacao.Enabled := False;
 
   Datamodule2.tbClientes.Cancel;
 end;
@@ -139,6 +188,9 @@ begin
   btnConfirmar.Visible := False;
   btnDesistir.Visible := False;
   DBNavigator1.Enabled := True;
+  edtDataCad.Enabled := False;
+  CbAtivo.Enabled := False;
+  RgClassificacao.Enabled := False;
 
 end;
 

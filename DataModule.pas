@@ -56,6 +56,7 @@ type
     tbClientesEndereco: TStringField;
     tbClientesNumero: TIntegerField;
     tbClientesID: TFDAutoIncField;
+    tbClientesData_Cadastro: TDateField;
     procedure tbMovProdutosAfterPost(DataSet: TDataSet);
     procedure tbMovProdutosAfterDelete(DataSet: TDataSet);
     procedure CalcTotal;

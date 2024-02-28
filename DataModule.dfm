@@ -301,6 +301,11 @@ object DataModule2: TDataModule2
       ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = False
     end
+    object tbClientesData_Cadastro: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'Data_Cadastro'
+      Origin = 'Data_Cadastro'
+    end
   end
   object dsClientes: TDataSource
     DataSet = tbClientes
