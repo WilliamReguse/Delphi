@@ -17,12 +17,14 @@ type
     ConsultaMovimentaes1: TMenuItem;
     CadastroDeProdutos1: TMenuItem;
     CadastrodeClientes1: TMenuItem;
+    CadastroDePedidos1: TMenuItem;
     procedure Sair1Click(Sender: TObject);
     procedure ConsultaEst1Click(Sender: TObject);
     procedure Entrada1Click(Sender: TObject);
     procedure ConsultaMovimentaes1Click(Sender: TObject);
     procedure CadastroDeProdutos1Click(Sender: TObject);
     procedure CadastrodeClientes1Click(Sender: TObject);
+    procedure CadastroDePedidos1Click(Sender: TObject);
 
 
   private
@@ -38,7 +40,7 @@ implementation
 
 {$R *.dfm}
 
-uses Produto, Entrada, ProdEst, UnitConsultaMov, UnitCadCliente;
+uses Produto, Entrada, ProdEst, UnitConsultaMov, UnitCadCliente, UnitPedido;
 
 
 
@@ -46,6 +48,11 @@ uses Produto, Entrada, ProdEst, UnitConsultaMov, UnitCadCliente;
 procedure TForm1.CadastrodeClientes1Click(Sender: TObject);
 begin
  CadCliente.Showmodal;
+end;
+
+procedure TForm1.CadastroDePedidos1Click(Sender: TObject);
+begin
+ Pedido.showmodal;
 end;
 
 procedure TForm1.CadastroDeProdutos1Click(Sender: TObject);

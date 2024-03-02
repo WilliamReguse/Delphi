@@ -151,6 +151,10 @@
             <Form>CadCliente</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UnitPedido.pas">
+            <Form>Pedido</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -81,18 +81,19 @@ begin
     end;
 
     begin
-       DBEDIT1.Enabled :=TRUE;
-     DBEDIT2.Enabled :=TRUE;
-     DBEDIT3.Enabled :=TRUE;
-     DBEDIT4.Enabled :=TRUE;
+     DBEDIT1.Enabled := TRUE;
+     DBEDIT2.Enabled := TRUE;
+     DBEDIT3.Enabled := TRUE;
+     DBEDIT4.Enabled := TRUE;
      {Dbnavigator1.Enabled :=TRUE;}
-     button4.Enabled :=TRUE;
-     button3.Enabled :=TRUE;
-     button1.Enabled :=FALSE;
-     button2.Enabled :=FALSE;
-       Button5.Enabled := True;
+     button4.Enabled := TRUE;
+     button3.Enabled := TRUE;
+     button1.Enabled := FALSE;
+     button2.Enabled := FALSE;
+     Button5.Enabled := True;
+     DbGrid1.Enabled := True;
 
-       DataModule2.tbProdutos.append;
+     DataModule2.tbProdutos.append;
     end;
 end;
 
@@ -100,7 +101,7 @@ end;
 
 procedure TCadProduto.Button2Click(Sender: TObject);
 begin
-   DBEDIT1.Enabled :=FALSE;
+  DBEDIT1.Enabled :=FALSE;
   DBEDIT2.Enabled :=FALSE;
   DBEDIT3.Enabled :=FALSE;
   DBEDIT4.Enabled :=FALSE;
@@ -109,7 +110,8 @@ begin
   button3.Enabled :=True;
   button2.Enabled :=False;
   button4.Enabled :=True;
-    Button5.Enabled := True;
+  Button5.Enabled := True;
+  Dbgrid1.Enabled := True;
 
   datamodule2.tbProdutos.Cancel;
 
@@ -150,6 +152,7 @@ begin
   Button2.Enabled :=True;
   button4.Enabled :=False;
   Button5.Enabled := False;
+  DbGrid1.Enabled := False;
 
 Datamodule2.tbprodutos.append;
 end;

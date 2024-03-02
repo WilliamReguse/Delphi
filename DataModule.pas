@@ -49,8 +49,8 @@ type
     tbClientes: TFDTable;
     dsClientes: TDataSource;
     tbClientesNome: TStringField;
-    tbClientesCPF: TIntegerField;
-    tbClientesTelefone: TIntegerField;
+    tbClientesCPF: TStringField;
+    tbClientesTelefone: TStringField;
     tbClientesEmail: TStringField;
     tbClientesCidade: TStringField;
     tbClientesEndereco: TStringField;

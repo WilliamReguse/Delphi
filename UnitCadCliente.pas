@@ -31,11 +31,11 @@ type
     btnFechar: TBitBtn;
     btnConfirmar: TBitBtn;
     btnDesistir: TBitBtn;
-    DBNavigator1: TDBNavigator;
     Label2: TLabel;
     edtDataCad: TDBEdit;
     cbAtivo: TCheckBox;
     RgClassificacao: TRadioGroup;
+    DBGrid1: TDBGrid;
     procedure btnFecharClick(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
     procedure btnDesistirClick(Sender: TObject);
@@ -81,17 +81,21 @@ begin
   btnAlterar.Visible := False;
   btnExcluir.Visible := False;
   btnFechar.Visible := False;
-  DBNavigator1.Visible := False;
   datamodule2.tbClientes.FieldByName('DATA_CADASTRO').Value := now;
   cbAtivo.Enabled := True;
   RgClassificacao.Enabled := True;
   CbAtivo.Checked := True;
+  RgClassificacao.ItemIndex := -1;
+  DbGrid1.Enabled := False;
+
 
 
 end;
 
 procedure TCadCliente.btnAlterarClick(Sender: TObject);
 begin
+  Datamodule2.tbClientes.Edit;
+
   edtNome.Enabled := True;
   edtCPF.Enabled := True;
   edtTelefone.Enabled := True;
@@ -105,11 +109,9 @@ begin
   btnAlterar.Visible := False;
   btnExcluir.Visible := False;
   btnFechar.Visible := False;
-  DBNavigator1.Visible := False;
   CbAtivo.Enabled := True;
   RgClassificacao.Enabled := True;
-
-  datamodule2.tbClientes.Post;
+  DbGrid1.Enabled := False;
 end;
 
 procedure TCadCliente.btnConfirmarClick(Sender: TObject);
@@ -136,9 +138,9 @@ begin
   btnAlterar.Visible := True;
   btnExcluir.Visible := True;
   btnFechar.Visible := True;
-  DBNavigator1.Visible := True;
   CbAtivo.Enabled := False;
   RgClassificacao.Enabled := False;
+  DbGrid1.Enabled := True;
 
 
  datamodule2.tbClientes.Post;
@@ -164,9 +166,9 @@ begin
   btnAlterar.Visible := True;
   btnExcluir.Visible := True;
   btnFechar.Visible := True;
-  DBNavigator1.Visible := True;
   cbAtivo.Enabled := False;
   RgClassificacao.Enabled := False;
+  DbGrid1.Enabled := True;
 
   Datamodule2.tbClientes.Cancel;
 end;
@@ -187,7 +189,6 @@ begin
   edtNumero.Enabled := False;
   btnConfirmar.Visible := False;
   btnDesistir.Visible := False;
-  DBNavigator1.Enabled := True;
   edtDataCad.Enabled := False;
   CbAtivo.Enabled := False;
   RgClassificacao.Enabled := False;

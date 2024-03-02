@@ -39,7 +39,6 @@ object DataModule2: TDataModule2
     Top = 232
   end
   object tbMovProdutos: TFDTable
-    Active = True
     AfterPost = tbMovProdutosAfterPost
     BeforeDelete = tbMovProdutosBeforeDelete
     AfterDelete = tbMovProdutosAfterDelete
@@ -263,15 +262,17 @@ object DataModule2: TDataModule2
       Required = True
       Size = 50
     end
-    object tbClientesCPF: TIntegerField
+    object tbClientesCPF: TStringField
       FieldName = 'CPF'
       Origin = 'CPF'
       Required = True
+      Size = 15
     end
-    object tbClientesTelefone: TIntegerField
+    object tbClientesTelefone: TStringField
       FieldName = 'Telefone'
       Origin = 'Telefone'
       Required = True
+      Size = 15
     end
     object tbClientesEmail: TStringField
       FieldName = 'Email'
@@ -298,7 +299,6 @@ object DataModule2: TDataModule2
     object tbClientesID: TFDAutoIncField
       FieldName = 'ID'
       Origin = 'ID'
-      ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = False
     end
     object tbClientesData_Cadastro: TDateField

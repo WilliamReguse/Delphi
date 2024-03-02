@@ -85,7 +85,7 @@ object CadProduto: TCadProduto
     Height = 41
     TabOrder = 0
     object Button4: TButton
-      Left = 340
+      Left = 339
       Top = 8
       Width = 75
       Height = 25
@@ -94,7 +94,7 @@ object CadProduto: TCadProduto
       OnClick = Button4Click
     end
     object Button1: TButton
-      Left = 178
+      Left = 177
       Top = 8
       Width = 75
       Height = 25
@@ -103,7 +103,7 @@ object CadProduto: TCadProduto
       OnClick = Button1Click
     end
     object Button3: TButton
-      Left = 97
+      Left = 95
       Top = 8
       Width = 75
       Height = 25
@@ -112,7 +112,7 @@ object CadProduto: TCadProduto
       OnClick = Button3Click
     end
     object Button2: TButton
-      Left = 259
+      Left = 258
       Top = 8
       Width = 75
       Height = 25

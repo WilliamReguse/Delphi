@@ -26,6 +26,10 @@ object Form1: TForm1
         Caption = 'Cadastro De Clientes'
         OnClick = CadastrodeClientes1Click
       end
+      object CadastroDePedidos1: TMenuItem
+        Caption = 'Cadastro De Pedidos'
+        OnClick = CadastroDePedidos1Click
+      end
     end
     object Movimentacao1: TMenuItem
       Caption = 'Movimentacao'
