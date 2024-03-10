@@ -37,7 +37,7 @@
     Left = 238
     Top = 109
     Width = 29
-    Height = 17
+    Height = 15
     Caption = 'Email'
   end
   object Endereço: TLabel
@@ -237,7 +237,8 @@
       'Cliente'
       'Funcion'#225'rio'
       'Terceiro'
-      'Prospecto')
+      'Prospecto'
+      'Representante')
     TabOrder = 16
   end
   object DBGrid1: TDBGrid

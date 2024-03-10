@@ -5,7 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids,
-  Vcl.DBGrids, Vcl.ExtCtrls, Vcl.Buttons, Vcl.OleCtrls, SHDocVw;
+  Vcl.DBGrids, Vcl.ExtCtrls, Vcl.Buttons, Vcl.OleCtrls, SHDocVw,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TEstoque = class(TForm)
@@ -32,10 +35,10 @@ uses DataModule;
 
 procedure TEstoque.ConsultarClick(Sender: TObject);
 begin
-datamodule2.sqlmovimentacoes.close;
- datamodule2.sqlMovimentacoes.SQL.Clear;
- datamodule2.sqlMovimentacoes.SQL.Text := 'select * from produtos';
- datamodule2.sqlMovimentacoes.Open;
+  datamodule2.sqlmovimentacoes.close;
+  datamodule2.sqlMovimentacoes.SQL.Clear;
+  datamodule2.sqlMovimentacoes.SQL.Text := 'select * from produtos';
+  datamodule2.sqlMovimentacoes.Open;
 end;
 
 procedure TEstoque.Button2Click(Sender: TObject);
